@@ -4,7 +4,8 @@ import Signin from "./Pages/Signin";
 
 const App = () => {
   return (
-    <div className="container">
+    <div className="m-16">
+     
     </div>
   );
 };
