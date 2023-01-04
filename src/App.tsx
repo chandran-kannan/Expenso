@@ -8,7 +8,7 @@ function App() {
     <div className="text-center"> 
        <Carousel /> 
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
