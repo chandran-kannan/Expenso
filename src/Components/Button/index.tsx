@@ -20,13 +20,13 @@ const Button = ({ onClick, variant, children, classNames }: ButtonProps) => {
   };
 
   return (
-    <button
-      className={`${classBuilder(variant)} 
-      p8 w-343 h-56 border-none rounded-16 font-size-18 font-600 pointer`}
-      onClick={onClick}
-    >
-      {children}
-    </button>
+  
+      <button className={`${classBuilder(variant)} 
+      p-8px w-343px h-56px border-none rounded-16px font-size-18px font-600 pointer`} 
+      onClick={onClick}>
+        {children}
+      </button>
+    
   );
 };
 

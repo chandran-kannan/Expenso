@@ -14,7 +14,7 @@ const PinInput = ({ maxLength, visible }: pinintput) => {
   // console.log(inputValues);
 
   return (
-    <div className="flex gap-16">
+    <div className="flex gap-16px">
       {[...Array(maxLength)].map((el, inputIndex: number) =>
         visible ? (
           <input
@@ -22,7 +22,7 @@ const PinInput = ({ maxLength, visible }: pinintput) => {
             id={String(inputIndex)}
             maxLength={1}
             type="password"
-            className={`w-32 h-32 rounded-50 border-4 text-center pointer outline caret-color font-none
+            className={`w-32px h-32px rounded-50px border-4px text-center pointer outline caret-color text-transparent
                ${inputValues[inputIndex] ? ' bg-primary ' : ' '} `}
             value={inputValues[inputIndex]}
             name={String(inputIndex)}
@@ -53,8 +53,8 @@ const PinInput = ({ maxLength, visible }: pinintput) => {
             id={String(inputIndex)}
             maxLength={1}
             type="text"
-            className={` rounded-50 border-none text-center pointer outline caret-color font-32 font-700
-          ${outPutValues[inputIndex] ? ' bg-none w-32 h-32  ' : 'w-16 h-16 grey'}`}
+            className={` rounded-50px border-none text-center pointer outline caret-color font-32px font-700
+          ${outPutValues[inputIndex] ? ' bg-none w-32px h-32px  ' : 'w-16px h-16px grey'}`}
             onKeyUp={(event) => {
               console.count('input 2');
               if (event.key === 'Backspace') {
