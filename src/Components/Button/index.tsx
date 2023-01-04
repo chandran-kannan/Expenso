@@ -1,25 +1,23 @@
-
 export type ButtonProps = {
   onClick?: () => void;
   variant?: string;
   children?: string;
-  classNames ?: string
-}
+  classNames?: string;
+};
 
-const Button = ({onClick, variant, children , classNames}: ButtonProps ) => {
-
+const Button = ({ onClick, variant, children, classNames }: ButtonProps) => {
   const classBuilder = (variant: string | undefined) => {
     switch (variant) {
       case 'primary':
-        return " bg-primary text-white"
-        case 'secondry':
-          return "bg-secondry text-primary"
-          case 'text':
-            return " bg-none text-primary"
-            default :
-            return "bg-primary"
-    }      
-  }
+        return ' bg-primary text-white';
+      case 'secondry':
+        return 'bg-secondry text-primary';
+      case 'text':
+        return ' bg-none text-primary';
+      default:
+        return 'bg-primary';
+    }
+  };
 
   return (
   
@@ -33,4 +31,3 @@ const Button = ({onClick, variant, children , classNames}: ButtonProps ) => {
 };
 
 export default Button;
-
