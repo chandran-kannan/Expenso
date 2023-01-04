@@ -5,7 +5,7 @@ interface dropDown {
   options: string[];
 }
 
-const DropDownBox = ({ options }: dropDown) => {
+const DropDown = ({ options }: dropDown) => {
   const [value, setValue] = useState('');
   const [show, setShow] = useState(false);
   const showHide = () => {
@@ -27,7 +27,7 @@ const DropDownBox = ({ options }: dropDown) => {
       </div>
       <div
         style={{ display: show ? 'block' : 'none' }}
-        className="flex items-center w-343 justify-between border-1 rounded-16 mt-16 absolute white z-1"
+        className="flex items-center w-343 justify-between border-1 rounded-16 mt-16 absolute bg-white z-1"
       >
         {options.map((option) => (
           <div
@@ -43,4 +43,4 @@ const DropDownBox = ({ options }: dropDown) => {
   );
 };
 
-export default DropDownBox;
+export default DropDown;
