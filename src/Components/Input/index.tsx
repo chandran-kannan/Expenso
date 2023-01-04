@@ -1,4 +1,4 @@
-import { Eye, EyeSlash } from "../../assets/Icon";
+import { Eye, EyeSlash } from "../../assets/Icons";
 import { useState } from "react";
 interface Input {
   type:
@@ -35,7 +35,7 @@ const Input = ({ type, placeholder }: Input) => {
       <input
         type={showPassword ? "text" : type}
         placeholder={placeholder}
-        className="w-311 h-32 ml-16 mr-16 mb-12 mt-12 border-none outline-none"
+        className="w-311 h-32 ml-16 mr-16 mb-12 mt-12 border-none outline-none font-size-18"
       ></input>
       {type === "password" ? (
         <i
@@ -43,7 +43,7 @@ const Input = ({ type, placeholder }: Input) => {
             setShowPassword(!showPassword);
           }}
         >
-          <span className="absolute r-30 b-7">
+          <span className="absolute r-30 b-10">
             {showPassword ? <Eye /> : <EyeSlash />}
           </span>
         </i>
