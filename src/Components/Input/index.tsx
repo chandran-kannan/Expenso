@@ -28,14 +28,14 @@ interface Input {
 }
 
 const Input = ({ type, placeholder }: Input) => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   return (
-    <div className="relative w-343 h-56  mr-16 border rounded-15">
+    <div className="relative w-343px h-56px  mr-16px border rounded-15px">
       <input
         type={showPassword ? "text" : type}
         placeholder={placeholder}
-        className="w-311 h-32 ml-16 mr-16 mb-12 mt-12 border-none outline-none font-size-18"
+        className="w-311px h-32px ml-16px mr-16px mb-12px mt-12px border-none outline-none font-size-18px"
       ></input>
       {type === "password" ? (
         <i
@@ -43,7 +43,7 @@ const Input = ({ type, placeholder }: Input) => {
             setShowPassword(!showPassword);
           }}
         >
-          <span className="absolute r-30 b-10">
+          <span className="absolute r-30px b-10px">
             {showPassword ? <Eye /> : <EyeSlash />}
           </span>
         </i>
