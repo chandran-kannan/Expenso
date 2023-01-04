@@ -5,9 +5,9 @@ import Carousel from './components/carousel';
 
 function App() { 
   return (
-    <div className="text-center"> 
-       <Carousel /> 
-    </div>
+   <div className="text-center">
+   <Carousel />
+   </div>
   )
 }
 
