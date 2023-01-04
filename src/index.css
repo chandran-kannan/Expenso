@@ -10,7 +10,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 :root {
   --primary: #7f3dff;
   --secondary: #eee5ff;
@@ -26,6 +25,7 @@
   --black: #212325;
   --light-gray: #f1f1fa;
   --white: #ffffff;
+  --grey: #e0e2e9;
 }
 
 html,
@@ -244,6 +244,7 @@ body {
 .border-1 {
   border: 1px solid;
 }
+
 .border-none {
   border: none;
 }
