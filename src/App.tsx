@@ -1,5 +1,5 @@
 import Button from './Components/Button'
-import Hero from './Components/Hero'
+import Hero from './Components/Header'
 
 function App() {
 
@@ -13,18 +13,18 @@ function App() {
    */
 
   const btnClick = () => {
-    console.log("BUTTON CLICKED")
+    //function goes here
   }
   
   return (
     <div className="App">
       <div className='flex flex-col'>
-      <Button btnClick={btnClick} type="Primary">Sign Up </Button><br/>
-      <Button type="secondry">Login</Button><br/>
-      <Button type="text">Forgot Password?</Button>
+      <Button onClick={btnClick} variant="Primary">Sign Up </Button>
+      <Button variant="secondry">Login</Button>
+      <Button variant="text">Forgot Password?</Button>
       </div>
       <div>
-      <Hero text="Sign Up"/>
+      <Hero title="Sign Up"/>
       </div>
     </div>
   )

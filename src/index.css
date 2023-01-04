@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&display=swap');
+@font-face {
+  font-family: 'Inter';
+  src: local('Myriad Pro Regular'), url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&display=swap') format('woff');
+}
 
 * {
   margin: 0;
@@ -9,123 +12,108 @@
 :root {
   --primary: #7F3DFF;
   --secondary: #EEE5FF;
-  --textColor: #212325;
+  --red:#fd3c4a;
+  --light-red : #fdd5d7;
+  --green:#00a86b;
+  --light-green: #cffaea;
+  --dark-blue :#5233ff;
+  --light-blue: #bddcff;
+  --blue: #0077ff;
+  --yellow : #fcac12;
+  --light-yellow : #fceed4;
+  --black: #212325;
+  --light-gray: #f1f1fa;
+  --white: #ffffff; 
 }
 
 html,
 body {
   font-family: 'Inter', sans-serif;
 }
-
-.App {
-  padding: 50px;
-}
-
 /* Background Color Property */
 
-.primary-100 {
-  background-color: #7f3dff;
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-secondry {
+  background-color: var(--secondary);
+}
+.bg-none{
+  background: none;
 }
 
-.primary-200 {
-  background-color: #eee5ff;
+.bg-red {
+  background-color: var(--red);
 }
 
-.red {
-  background-color: #fd3c4a;
+.bg-green {
+  background-color: var(--green);
 }
 
-.green {
-  background-color: #00a86b;
+.bg-dark-blue {
+  background-color: var(--dark-blue);
 }
 
-.dark-blue {
-  background-color: #5233ff;
+.bg-blue {
+  background-color: var(--blue);
 }
 
-.blue {
-  background-color: #0077ff;
+.bg-yellow {
+  background-color: var(--yellow);
 }
 
-.yellow {
-  background-color: #fcac12;
+.bg-light-yellow {
+  background-color: var(--light-yellow);
 }
 
-.sandal {
-  background-color: #fceed4;
+.bg-light-red {
+  background-color: var(--light-red);
 }
 
-.light-red {
-  background-color: #fdd5d7;
+.bg-light-blue {
+  background-color: var(--light-blue);
 }
 
-.light-blue {
-  background-color: #bddcff;
-}
-
-.black {
-  background-color: #000000;
+.bg-black {
+  background-color: var(--black);
 }
 
 .light-grey {
-  background-color: #f1f1fa;
+  background-color: var(--light-gray);
 }
 
 .light-green {
-  background-color: #cffaea;
+  background-color: var(--light-green);
 }
 
 /*Text Color*/
-
-.text-white {
-  color: #ffffff;
-}
-
-.text-light-black {
-  color: #212325;
-}
-
-.text-grey {
-  color: #212325;
-}
-
-.text-milk-white {
-  color: #fcfcfc;
-}
-
 .text-primary {
-  color: #7f3dff;
-}
-
-.text-light-grey {
-  color: #91919f;
-}
-
-.text-black {
-  color: #000000;
-}
-
-.text-yellow {
-  color: #fcac12;
-}
-
-.text-green {
-  color: #00a86b;
-}
-
-.text-red {
-  color: #fd3c4a;
-}
-.color-white {
-  color: white;
-}
-.color-black {
-  color: var(--textColor);
-}
-.color-voilet {
   color: var(--primary);
 }
 
+.text-white {
+  color: var(--white);
+}
+
+.text-black {
+  color: var(--black);
+}
+
+.text-light-grey {
+  color: var(--light-gray);
+}
+
+.text-yellow {
+  color: var(--yellow);
+}
+
+.text-green {
+  color: var(--green);
+}
+
+.text-red {
+  color: var(--red);
+}
 /*Flex-Property*/
 
 .flex {
@@ -233,6 +221,9 @@ body {
 .w-32 {
   width: 32px;
 }
+.w {
+  width: 100%;
+}
 
 .w-343 {
   width: 343px;
@@ -260,26 +251,11 @@ body {
   padding: 8px;
 }
 
-/* button */
-
-.bg-primary {
-  background-color: var(--primary);
-}
-.bg-secondry {
-  background-color: var(--secondary);
-}
-.bg-none{
-  background: none;
-}
-
 /* Font size */
 
 .font-size-18 {
   font-size: 18px;
 }
-.hero-title {
+.hero-shadow {
   text-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.gap-100{
-  gap: 110px;
 }

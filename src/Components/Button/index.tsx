@@ -1,34 +1,34 @@
-import React from "react";
 
 export type ButtonProps = {
-  btnClick?: () => void;
-  type?: string;
+  onClick?: () => void;
+  variant?: string;
   children?: string;
+  classNames ?: string
 }
 
-const Button = ({btnClick, type, children}: ButtonProps ) => {
+const Button = ({onClick, variant, children , classNames}: ButtonProps ) => {
 
-  console.log("children",children);
-
-  const classBuilder = (type: string | undefined) => {
-    switch (type) {
+  const classBuilder = (variant: string | undefined) => {
+    switch (variant) {
       case 'primary':
-        return "p8 w-343 h-56 bg-primary border-none rounded-16 font-size-18 color-white font-600 pointer"
+        return " bg-primary text-white"
         case 'secondry':
-          return "p8 w-343 h-56 bg-secondry border-none rounded-16 font-size-18 color-voilet font-600 pointer"
+          return "bg-secondry text-primary"
           case 'text':
-            return "p8 w-343 h-56 bg-none border-none font-size-18 color-voilet font-600 pointer"
+            return " bg-none text-primary"
             default :
-            return "p8 w-343 h-56 bg-primary border-none rounded-16 font-size-18 color-white font-600 pointer"
+            return "bg-primary"
     }      
   }
 
   return (
-    <>
-      <button className={classBuilder(type)} onClick={btnClick}>
+  
+      <button className={`${classBuilder(variant)} 
+      p8 w-343 h-56 border-none rounded-16 font-size-18 font-600 pointer`} 
+      onClick={onClick}>
         {children}
       </button>
-    </>
+    
   );
 };
 
