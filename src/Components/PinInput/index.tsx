@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef } from 'react';
 
 type pinintput = {
   maxLength: number;
@@ -23,27 +23,24 @@ const PinInput = ({ maxLength, visible }: pinintput) => {
             maxLength={1}
             type="password"
             className={`w-32 h-32 rounded-50 border-4 text-center pointer outline caret-color font-none
-               ${inputValues[inputIndex] ? " primary-100 " : " "} `}
+               ${inputValues[inputIndex] ? ' bg-primary ' : ' '} `}
             value={inputValues[inputIndex]}
             name={String(inputIndex)}
-
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               // console.log("inputIndex", event.target.name);
               setInputValues({
                 ...inputValues,
                 [event.target.name]: event.target.value,
               });
-              const next = document.getElementById(
-                String(inputIndex + 1)
-              ) as HTMLInputElement;
+              const next = document.getElementById(String(inputIndex + 1)) as HTMLInputElement;
               next?.focus();
               // next?.select();
             }}
             onKeyUp={(event) => {
-              console.count("input 2");
-              if (event.key === "Backspace") {
+              console.count('input 2');
+              if (event.key === 'Backspace') {
                 const previous = document.getElementById(
-                  String(inputIndex - 1)
+                  String(inputIndex - 1),
                 ) as HTMLInputElement;
                 previous?.focus();
                 // previous?.select();
@@ -56,17 +53,13 @@ const PinInput = ({ maxLength, visible }: pinintput) => {
             id={String(inputIndex)}
             maxLength={1}
             type="text"
-            className={`grey rounded-50 border-none text-center pointer outline caret-color font-32 font-700
-          ${
-            outPutValues[inputIndex]
-              ? " bg-transparent w-32 h-32  "
-              : "w-16 h-16 "
-          }`}
+            className={` rounded-50 border-none text-center pointer outline caret-color font-32 font-700
+          ${outPutValues[inputIndex] ? ' bg-none w-32 h-32  ' : 'w-16 h-16 grey'}`}
             onKeyUp={(event) => {
-              console.count("input 2");
-              if (event.key === "Backspace") {
+              console.count('input 2');
+              if (event.key === 'Backspace') {
                 const previous = document.getElementById(
-                  String(inputIndex - 1)
+                  String(inputIndex - 1),
                 ) as HTMLInputElement;
                 previous?.focus();
                 // previous?.select();
@@ -79,14 +72,12 @@ const PinInput = ({ maxLength, visible }: pinintput) => {
                 ...outPutValues,
                 [event.target.name]: event.target.value,
               });
-              const next = document.getElementById(
-                String(inputIndex + 1)
-              ) as HTMLInputElement;
+              const next = document.getElementById(String(inputIndex + 1)) as HTMLInputElement;
               next?.focus();
               // next?.select();
             }}
           />
-        )
+        ),
       )}
     </div>
   );
