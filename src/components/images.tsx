@@ -1,4 +1,5 @@
-const images = [{
+
+const images:{id: number, src: string, alt: string, heading: string, subhead: string}[] = [{
     id: 1,
     src: "banner3.jpg",
     alt: "Image 1",
@@ -20,4 +21,5 @@ const images = [{
     subhead: "Setup your budget for each category so you in control"
 }
 ];
+
 export default images;
