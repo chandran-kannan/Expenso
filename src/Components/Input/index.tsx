@@ -25,16 +25,29 @@ interface Input {
     | "url"
     | "week";
   placeholder: string;
+  name?:string;
+  value?:string;
+  pattern?:string;
+  maxlength?:number;
+  minlength?:number;
+  onChange?:()=>void
 }
 
-const Input = ({ type, placeholder }: Input) => {
+const Input = ({ type, placeholder,name,value,pattern,maxlength,minlength,onChange}: Input) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   return (
-    <div className="relative w-343px h-56px  mr-16px border rounded-15px">
+    <div  className="relative w-343px h-56px  mr-16px border rounded-15px">
+      
       <input
         type={showPassword ? "text" : type}
         placeholder={placeholder}
+        name={name}
+        value={value}
+        pattern={pattern}
+        maxLength={maxlength}
+        minLength={minlength}
+        onChange={onChange}
         className="w-311px h-32px ml-16px mr-16px mb-12px mt-12px border-none outline-none font-size-18px"
       ></input>
       {type === "password" ? (
@@ -48,6 +61,7 @@ const Input = ({ type, placeholder }: Input) => {
           </span>
         </i>
       ) : null}
+      
     </div>
   );
 };
