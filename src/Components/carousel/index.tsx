@@ -6,7 +6,7 @@ import images from "./data";
 import  "./carousel.css";
 
 /* command*/
-export type Image = {
+ type Image = {
   id: number,
   src: string,
   alt: string,
