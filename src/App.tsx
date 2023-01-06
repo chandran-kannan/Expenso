@@ -1,11 +1,10 @@
-import Register from "./Pages/Register";
-import Carousel from "./components/carousel";
+import RoutesWrapper from "./Routes";
 
 const App = () => {
   return (
-    <>
-    
-     </>
+    <div>
+      <RoutesWrapper/>
+    </div>
   );
 };
 
