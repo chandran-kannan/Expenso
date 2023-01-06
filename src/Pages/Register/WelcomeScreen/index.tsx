@@ -1,5 +1,5 @@
 
-import Carousel from '../../../Components/Carousel';
+import Carousel from '../../../Components/carousel';
 import Button from '../../../Components/Button';
 
 const WelcomeScreen = () => {

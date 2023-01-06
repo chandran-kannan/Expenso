@@ -70,7 +70,7 @@ body {
 }
 
 /*Text*/
-.font-32px {
+.fs32px {
   font-size: 32px;
 }
 
@@ -436,6 +436,6 @@ body {
 
 .slick-dots li button:before
 {
-color:#EEE5FF !important;
+color:var(--secondary) !important;
 opacity: 1 !important;
 }

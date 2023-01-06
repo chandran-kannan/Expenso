@@ -1,10 +1,12 @@
 
-export type HeaderProps = {
+type HeaderProps = {
   title ?: string;
   className ?: string; 
   leftIcon ?: JSX.Element
   rightIcon ?: JSX.Element
 }
+/*To use it => <Header title='Sign Up' leftIcon={<LeftArrow/>} className="text-red"/>*/
+
 const Header = ({title , className , leftIcon , rightIcon} : HeaderProps) => {
   return (
     <div className='flex w-350px px-15px m-auto justify-between'>
