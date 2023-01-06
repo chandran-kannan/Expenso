@@ -1,17 +1,10 @@
-import Carousel from "./Components/Carousel";
-import Header from "./Components/Header";
-import { LeftArrow } from "./assets/Icons";
+import RoutesWrapper from "./Routes";
 
 const App = () => {
   return (
     <div>
-      <div>
-      <Header leftIcon = {<LeftArrow/>}  title="Sign up" className="" rightIcon={<LeftArrow />} />
-      </div>
-      <div>
-        <Carousel/>
-      </div>
-     </div>
+      <RoutesWrapper/>
+    </div>
   );
 };
 
