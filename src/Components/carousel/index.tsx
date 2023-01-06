@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import images from "./data";
 
 /* command*/
-interface Iimage {
+interface Image {
   id: number,
   src: string,
   alt: string,
@@ -26,7 +26,7 @@ const Carousel = () => {
   return (
     <div className="w-350px px-15px m-auto display-block">
       <Slider  {...carousalSettings}>
-        {images.map((item: Iimage) => (
+        {images.map((item: Image) => (
           <div key={item.id}>
             <img className="w-312px h-312px display-block m-auto" src={item.src} alt={item.alt} />
             <h2 className="carousel-heading-color line-height-35px font-size-28px font-700 m-top-10px m-bot-5px px-20px">

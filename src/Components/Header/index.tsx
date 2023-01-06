@@ -1,16 +1,22 @@
 
-import { LeftArrow } from '../../assets/Icons'
-
 export type HeroProps = {
   title ?: string;
+  className ?: string; 
+  leftIcon ?: JSX.Element
+  rightIcon ?: JSX.Element
 }
-const Hero = ({title} : HeroProps) => {
+const Header = ({title , className , leftIcon , rightIcon} : HeroProps) => {
   return (
-    <div className='flex'>
-     <LeftArrow/>
-     <h6 className='font-600 font-size-18 text-black hero-shadow'>{title}</h6>
+    <div className='flex w-350px px-15px m-auto justify-between'>
+      <span>
+        {leftIcon}
+      </span>
+     <h6 className={`font-600 font-size-18 text-black hero-shadow ${(className)}`} > {title}   </h6>
+     <span>
+      {rightIcon}
+     </span>
     </div>
   )
 }
 
-export default Hero
+export default Header
