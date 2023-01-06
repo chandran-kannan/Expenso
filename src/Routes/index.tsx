@@ -9,7 +9,7 @@ const RoutesWrapper = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Header title='Sign Up' leftIcon={<LeftArrow/>}/>}></Route>
+        <Route path="/" element={<Header title='Sign Up' leftIcon={<LeftArrow/>} className="text-red"/>}></Route>
 
       </Routes>
     </BrowserRouter>

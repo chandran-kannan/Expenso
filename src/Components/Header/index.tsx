@@ -14,8 +14,11 @@ const Header = ({title , className , leftIcon , rightIcon} : HeaderProps) => {
      <h6 className={`font-600 fs-18px text-black header-shadow ${(className)}`} > {title} </h6>
      <span>
       {rightIcon}
-     </span>
-    </div>
+     </span> 
+   </div>
+
+   /*To use it => <Header title='Sign Up' leftIcon={<LeftArrow/>} className="text-red"/>*/
+   
   )
 }
 
