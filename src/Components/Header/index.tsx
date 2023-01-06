@@ -4,7 +4,7 @@ import { LeftArrow } from '../../assets/Icons'
 export type HeroProps = {
   title ?: string;
 }
-const Hero = ({title} : HeroProps) => {
+const Header = ({title} : HeroProps) => {
   return (
     <div className='flex'>
      <LeftArrow/>
@@ -13,4 +13,4 @@ const Hero = ({title} : HeroProps) => {
   )
 }
 
-export default Hero
+export default Header
