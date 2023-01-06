@@ -343,12 +343,7 @@ body {
   padding: 16px;
 }
 
-/* Font size */
-
-.font-size-18px {
-  font-size: 18px;
-}
-.hero-shadow {
+.header-shadow {
   text-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -376,6 +371,12 @@ body {
 .mb-12px {
   margin-bottom: 12px;
 }
+.mt-33px{
+  margin-top: 33px;
+}
+.mt-16px{
+  margin-top: 16px;
+}
 .border-none {
   border: none;
 }
@@ -390,6 +391,9 @@ body {
 }
 .fs-18px {
   font-size: 18px;
+}
+.fs-24px{
+  font-size: 24px;
 }
 .m-16px {
   margin: 16px;
@@ -423,4 +427,15 @@ body {
 }
 .h-216px {
   height: 216px;
+}
+.slick-dots li.slick-active button:before {
+  opacity: .75;
+  color: var(--primary) !important;
+  font-size: 14px;
+}
+
+.slick-dots li button:before
+{
+color:#EEE5FF !important;
+opacity: 1 !important;
 }
