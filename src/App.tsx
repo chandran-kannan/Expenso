@@ -1,8 +1,10 @@
+import RoutesWrapper from "./Routes";
+
 const App = () => {
   return (
     <div>
-     
-     </div>
+      <RoutesWrapper/>
+    </div>
   );
 };
 
