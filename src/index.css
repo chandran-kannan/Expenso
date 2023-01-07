@@ -70,7 +70,7 @@ body {
 }
 
 /*Text*/
-.font-32px {
+.fs-32px {
   font-size: 32px;
 }
 
@@ -369,6 +369,12 @@ body {
 .mb-12px {
   margin-bottom: 12px;
 }
+.mt-33px{
+  margin-top: 33px;
+}
+.mt-16px{
+  margin-top: 16px;
+}
 .border-none {
   border: none;
 }
@@ -403,6 +409,9 @@ body {
 }
 .fs-18px {
   font-size: 18px;
+}
+.fs-24px{
+  font-size: 24px;
 }
 .m-16px {
   margin: 16px;
