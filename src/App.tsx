@@ -1,11 +1,11 @@
+import RoutesWrapper from "./Routes";
 
-function App() {
-
+const App = () => {
   return (
-    <div className="App">
-      
+    <div>
+      <RoutesWrapper/>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

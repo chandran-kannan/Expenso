@@ -1,0 +1,11 @@
+/* Carousel dot property css */
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #7F3DFF !important;
+    font-size: 14px;
+  }
+  .slick-dots li button:before
+  {
+    color:#EEE5FF !important;
+    opacity: 1 !important;
+  }
