@@ -33,7 +33,7 @@ const ForgotPassword = () => {
             <Header
               title="Forgot Password"
               leftIcon={<LeftArrow width={24} height={16} />}
-              className="text-white"
+              className=""
             />
           </div>
           <div className="w-343px font-size-24px text-black font-600 mt-69px">

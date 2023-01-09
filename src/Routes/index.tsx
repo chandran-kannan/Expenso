@@ -10,7 +10,7 @@ const RoutesWrapper = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<WelcomeScreen />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
       </Routes>
     </BrowserRouter>
   );
