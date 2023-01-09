@@ -1,5 +1,5 @@
 import { Eye, EyeSlash } from '../../assets/Icons';
-import { useState } from 'react';
+import React, { useState } from 'react';
 interface Input {
   type:
     | 'button'
@@ -30,8 +30,8 @@ interface Input {
   pattern?: string;
   maxlength?: number;
   minlength?: number;
-  className?:string;
-  onChange?: () => void;
+  className?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input = ({
@@ -58,7 +58,7 @@ const Input = ({
         maxLength={maxlength}
         minLength={minlength}
         onChange={onChange}
-        className="w-311px h-32px ml-16px mr-16px mb-12px mt-12px border-none outline-none font-size-18px"
+        className="w-311px h-32px ml-16px mr-16px mb-12px mt-12px border-none outline-none fs-16px"
       ></input>
       {type === 'password' ? (
         <i
@@ -66,7 +66,9 @@ const Input = ({
             setShowPassword(!showPassword);
           }}
         >
-          <span className="absolute r-30px b-10px">{showPassword ? <Eye width="30" height="30" /> : <EyeSlash width="30" height="30" />}</span>
+          <span className="absolute r-30px b-10px">
+            {showPassword ? <Eye width={30} height={30} /> : <EyeSlash width={30} height={30} />}
+          </span>
         </i>
       ) : null}
     </div>

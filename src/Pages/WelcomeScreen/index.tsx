@@ -1,6 +1,6 @@
 
-import Carousel from '../../../Components/carousel';
-import Button from '../../../Components/Button';
+import Carousel from '../../Components/carousel';
+import Button from '../../Components/Button';
 import { useNavigate } from 'react-router-dom';
 
 const WelcomeScreen = () => {
