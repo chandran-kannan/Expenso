@@ -9,7 +9,7 @@ type HeaderProps = {
 
 const Header = ({title , className , leftIcon , rightIcon} : HeaderProps) => {
   return (
-    <div className='flex w-350px px-15px m-auto justify-between'>
+    <div className='flex w-350px m-auto justify-between'>
       <span className="mt-3px">
         {leftIcon}
       </span>
