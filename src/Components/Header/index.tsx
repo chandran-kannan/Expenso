@@ -5,7 +5,7 @@ type HeaderProps = {
   rightIcon ?: JSX.Element
 }
 
-/*To use it => <Header leftIcon={<LeftArrow height={18} width={18}/>} className="text-black" title="Sign up" />*/
+/*To use it => <Header leftIcon={<LeftArrow height={14} width={14} fill="white"/>} title='Sign Up' className='text-white'/>*/
 
 const Header = ({title , className , leftIcon , rightIcon} : HeaderProps) => {
   return (
