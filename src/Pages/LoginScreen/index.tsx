@@ -35,7 +35,7 @@ const LoginScreen = () => {
 
   return (
     <div>
-      <div className="mt-44px flex flex-col items-center">
+      <div className="pt-46px flex flex-col items-center">
         <Header leftIcon={<LeftArrow width={24} height={16} />} title="Login" />
       </div>
       <form
