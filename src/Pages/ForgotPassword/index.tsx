@@ -5,21 +5,13 @@ import { Mail } from '../../assets/Images';
 import Button from '../../Components/Button';
 import Header from '../../Components/Header';
 import Input from '../../Components/Input';
-import PinInput from '../../Components/PinInput';
 
 const ForgotPassword = () => {
   const [showScreen, setShowScreen] = useState<boolean>(true);
   const [submit, setSubmit] = useState<string>('');
-  const handleThis = () => {
-    console.log('B2L');
-  };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSubmit(e.target?.value);
-    console.log('working');
   };
-  // PinInput
-  const [val, setVal] = useState<number[]>([]);
-  const number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <div className="flex items-center justify-start h-full flex flex-col">
       {showScreen ? (
@@ -73,7 +65,7 @@ const ForgotPassword = () => {
           </div>
           <div className="mt-auto mb-16px">
             <Link to="/">
-              <Button variant="primary" children="Back to Login" onClick={handleThis} />
+              <Button variant="primary" children="Back to Login" />
             </Link>
           </div>
         </>
