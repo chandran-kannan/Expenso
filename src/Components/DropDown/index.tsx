@@ -15,7 +15,7 @@ const DropDown = ({ options }: dropDown) => {
   return (
     <div>
       <div
-        className="flex items-center w-343 justify-between border-1 h-56 p-16 rounded-16 relative"
+        className="flex items-center w-343px justify-between border-1 h-56px p-16 rounded-16px relative"
         onClick={() => setShowOptions(!showOptions)}
       >
         <span>{value === '' ? 'Account type' : value}</span>
@@ -23,11 +23,11 @@ const DropDown = ({ options }: dropDown) => {
       </div>
       <div
         style={{ display: showOptions ? 'block' : 'none' }}
-        className="flex items-center w-343 justify-between border-1 rounded-16 mt-16 absolute bg-white z-index-1"
+        className="flex items-center w-343px justify-between border-1 rounded-16px mt-16 absolute bg-white z-index-1"
       >
         {options.map((option) => (
           <div
-            className="flex items-center h-56 p-16"
+            className="flex items-center h-56px p-16"
             key={option}
             onClick={() => changeValue(option)}
           >

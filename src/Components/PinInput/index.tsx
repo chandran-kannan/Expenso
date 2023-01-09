@@ -3,11 +3,13 @@ import React, { useState, useRef } from 'react';
 type pinintput = {
   maxLength: number;
   visible: boolean;
+  val?: number[];
 };
 
-const PinInput = ({ maxLength, visible }: pinintput) => {
+const PinInput = ({ maxLength, visible, val }: pinintput) => {
   const [inputValues, setInputValues] = useState<any>({});
   const [outPutValues, setOutPutValues] = useState<any>({});
+  console.log(val);
 
   // const inputReference = useRef<HTMLInputElement>();
 
@@ -22,9 +24,9 @@ const PinInput = ({ maxLength, visible }: pinintput) => {
             id={String(inputIndex)}
             maxLength={1}
             type="password"
-            className={`w-32px h-32px rounded-50px border-4px text-center pointer outline caret-color text-transparent
+            className={`w-32px h-32px rounded-50px border-4px text-center pointer outline caret-color
                ${inputValues[inputIndex] ? ' bg-primary ' : ' '} `}
-            value={inputValues[inputIndex]}
+            value={val && val[inputIndex]}
             name={String(inputIndex)}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               // console.log("inputIndex", event.target.name);
