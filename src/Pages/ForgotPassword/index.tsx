@@ -10,6 +10,7 @@ import { emailValidator } from "../../Utils/Validators";
 const ForgotPassword = () => {
   const [showEmailSentScreen, setShowEmailSentScreen] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
+  const [errorEmailMessage, setErrorEmailMessage] = useState<string>("");
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target?.value);
   };
@@ -39,6 +40,9 @@ const ForgotPassword = () => {
           onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
             event.preventDefault();
             emailValidator(email) && setShowEmailSentScreen(true);
+            email
+              ? setErrorEmailMessage("Please enter a valid Email")
+              : setErrorEmailMessage("Please enter a Email");
           }}
         >
           <div className="flex items-center w-343px h-64px">
@@ -62,6 +66,11 @@ const ForgotPassword = () => {
                 onChange={handleChange}
               />
             </div>
+            {errorEmailMessage && (
+              <span className="pl-10px w-343px fs-12px text-red mt-10px display-block">
+                {errorEmailMessage}
+              </span>
+            )}
 
             <span className="flex mt-32px">
               <Button type="submit" variant="primary" children="Continue" />
