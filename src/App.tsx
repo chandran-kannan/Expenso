@@ -7,10 +7,8 @@ import Verification from "./Pages/Register/verification";
 const App = () => {
   
   return (
-    <div>
-       <Register />
-       {/* <Verification /> */}
-       
+    <div className="h-full">
+      <RoutesWrapper />
     </div>
   );
 };
