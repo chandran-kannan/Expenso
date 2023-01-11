@@ -1,12 +1,12 @@
-import React from "react";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import images from "./data";
-import './carousel.css'
+import  "./carousel.css";
 
 /* command*/
-export type Image = {
+ type Image = {
   id: number,
   src: string,
   alt: string,
