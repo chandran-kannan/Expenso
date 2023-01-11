@@ -1,0 +1,103 @@
+/* modal */
+
+.left-0-m {
+    left: 0;
+}
+
+.right-0-m {
+    right: 0;
+}
+
+.top-0-m {
+    top: 0;
+}
+
+.bottom-0-m {
+    bottom: 0;
+}
+
+.bg-black-m {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.opacity-0-m {
+    opacity: 0;
+}
+
+.transition-m {
+    transition: all 0.3s ease-in-out;
+}
+
+.pointer-event-none-m {
+    pointer-events: none;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: visible;
+}
+
+.bg-white-m {
+    background-color: white;
+}
+
+.mx-15px-m {
+    margin: 0 15px;
+}
+
+.radius-10px {
+    border-radius: 10px;
+}
+
+.modal-header,
+.modal-footer {
+    padding: 10px;
+}
+
+.fs-22px-m {
+    font-size: 22px;
+}
+
+.lh-32px-m {
+    line-height: 32px;
+}
+
+.py-3px-m {
+    padding: 3px 0;
+}
+
+.mxy-5px-10px-m {
+    margin: 5px 10px
+}
+
+.mb-0px-m {
+    margin-bottom: 0;
+}
+
+.p-10px-m {
+    padding: 10px;
+}
+
+.border-t-m {
+    border-top: 1px solid #eee;
+}
+
+.border-b-m {
+    border-bottom: 1px solid #eee;
+}
+
+.pxy-6px-15px-m {
+    padding: 6px 15px;
+}
+
+.bt-bg-m {
+    background: #7f3dff;
+}
+
+.radius-5px-m {
+    border-radius: 5px;
+}
+
+.style-none-m {
+    border-style: none;
+}
