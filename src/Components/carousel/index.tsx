@@ -1,8 +1,8 @@
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import images from './data';
-import './carousel.css';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import images from "./data";
+import "./carousel.css";
 
 /* command*/
 type Image = {
@@ -19,7 +19,7 @@ const Carousel = () => {
     dots: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: false
     //   autoplaySpeed: 2000,
   };
   return (

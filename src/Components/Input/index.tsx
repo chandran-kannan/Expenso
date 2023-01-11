@@ -1,29 +1,29 @@
-import { Eye, EyeSlash } from '../../assets/Icons';
-import React, { useState } from 'react';
+import { Eye, EyeSlash } from "../../assets/Icons";
+import React, { useState } from "react";
 interface Input {
   type:
-    | 'button'
-    | 'checkbox'
-    | 'color'
-    | 'date'
-    | 'datetime-local'
-    | 'email'
-    | 'file'
-    | 'hidden'
-    | 'image'
-    | 'month'
-    | 'number'
-    | 'password'
-    | 'radio'
-    | 'range'
-    | 'reset'
-    | 'search'
-    | 'submit'
-    | 'tel'
-    | 'text'
-    | 'time'
-    | 'url'
-    | 'week';
+    | "button"
+    | "checkbox"
+    | "color"
+    | "date"
+    | "datetime-local"
+    | "email"
+    | "file"
+    | "hidden"
+    | "image"
+    | "month"
+    | "number"
+    | "password"
+    | "radio"
+    | "range"
+    | "reset"
+    | "search"
+    | "submit"
+    | "tel"
+    | "text"
+    | "time"
+    | "url"
+    | "week";
   placeholder: string;
   name?: string;
   value?: string;
@@ -43,14 +43,14 @@ const Input = ({
   pattern,
   maxlength,
   minlength,
-  onChange,
+  onChange
 }: Input) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   return (
     <div className={`relative w-343px h-56px border rounded-15px ${className}`}>
       <input
-        type={showPassword ? 'text' : type}
+        type={showPassword ? "text" : type}
         placeholder={placeholder}
         name={name}
         value={value}
@@ -60,7 +60,7 @@ const Input = ({
         onChange={onChange}
         className="w-311px h-32px ml-16px mb-12px mt-12px border-none outline-none bg-transparent fs-16px"
       ></input>
-      {type === 'password' ? (
+      {type === "password" ? (
         <i
           onClick={() => {
             setShowPassword(!showPassword);

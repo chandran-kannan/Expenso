@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { LeftArrow } from '../../assets/Icons';
-import { Mail } from '../../assets/Images';
-import Button from '../../Components/Button';
-import Header from '../../Components/Header';
-import Input from '../../Components/Input';
-import { regexEmailValidation } from '../../Utils/Regex';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { LeftArrow } from "../../assets/Icons";
+import { Mail } from "../../assets/Images";
+import Button from "../../Components/Button";
+import Header from "../../Components/Header";
+import Input from "../../Components/Input";
+import { emailValidator } from "../../Utils/Validators";
 
 const ForgotPassword = () => {
   const [showEmailSentScreen, setShowEmailSentScreen] = useState<boolean>(false);
-  const [email, setEmail] = useState<string>('');
+  const [email, setEmail] = useState<string>("");
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target?.value);
   };
@@ -34,10 +34,11 @@ const ForgotPassword = () => {
         </div>
       ) : (
         <form
-          className="flex flex-col items-center"
+          className="flex flex-col items-center "
+          style={{ flexGrow: 1 }}
           onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
             event.preventDefault();
-            regexEmailValidation(email) && setShowEmailSentScreen(true);
+            emailValidator(email) && setShowEmailSentScreen(true);
           }}
         >
           <div className="flex items-center w-343px h-64px">
@@ -47,22 +48,25 @@ const ForgotPassword = () => {
               className=""
             />
           </div>
-          <div className="w-343px fs-24px text-black font-600 mt-69px">
-            <span>Don’t worry.</span>
-            <br />
-            <span>Enter your email and we’ll send you a link to reset your password.</span>
+          <div className="" style={{ flexGrow: 1 }}>
+            <div className="w-343px fs-24px text-black font-600 mt-69px">
+              <span>Don’t worry.</span>
+              <br />
+              <span>Enter your email and we’ll send you a link to reset your password.</span>
+            </div>
+            <div className="flex items-center">
+              <Input
+                type="text"
+                placeholder="Email"
+                className="mt-45px fs-18px"
+                onChange={handleChange}
+              />
+            </div>
+
+            <span className="flex mt-32px">
+              <Button type="submit" variant="primary" children="Continue" />
+            </span>
           </div>
-          <div className="flex items-center">
-            <Input
-              type="text"
-              placeholder="Email"
-              className="mt-45px fs-18px"
-              onChange={handleChange}
-            />
-          </div>
-          <span className="flex mt-32px">
-            <Button type="submit" variant="primary" children="Continue" />
-          </span>
         </form>
       )}
     </div>

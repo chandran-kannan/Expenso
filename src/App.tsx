@@ -1,4 +1,4 @@
-import RoutesWrapper from './Routes';
+import RoutesWrapper from "./Routes";
 
 const App = () => {
   return (
