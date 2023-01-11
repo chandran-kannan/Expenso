@@ -10,6 +10,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --primary: #7f3dff;
   --secondary: #eee5ff;
@@ -496,11 +497,17 @@ body {
 .w-311px {
   width: 311px;
 }
+.w-24px {
+  width: 24px;
+}
 .h-56px {
   height: 56px;
 }
 .h-32px {
   height: 32px;
+}
+.h-16 {
+  height: 16px;
 }
 .ml-7px {
   margin-left: -7%;
@@ -532,4 +539,19 @@ body {
 /* over-flow */
 .overflow-y {
   overflow-y: auto;
+}
+.text-decoration-none {
+  text-decoration: none;
+}
+.w-30px {
+  width: 30px;
+}
+.h-30px {
+  height: 30px;
+}
+.pl-20px {
+  padding-left: 20px;
+}
+.pr-15px {
+  padding-right: 15px;
 }

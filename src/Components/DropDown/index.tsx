@@ -1,4 +1,4 @@
-import React, { Children, useState } from "react";
+import React, { useState } from "react";
 import { Vector } from "../../assets/Images";
 
 type dropDown = {
@@ -19,7 +19,6 @@ const DropDown = ({ options, placeholder, onChange }: dropDown) => {
       <div
         className="flex items-center w-343px justify-between border-1px h-56px p-16px rounded-16px relative"
         onClick={() => {
-          console.log("clicked", showOptions);
           setShowOptions(!showOptions);
         }}
       >

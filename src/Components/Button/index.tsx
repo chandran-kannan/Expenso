@@ -1,12 +1,13 @@
 export type ButtonProps = {
   onClick?: () => void;
-  variant?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  variant?: 'primary' | 'secondary'| 'text' |undefined;
   children?: string;
-  classNames?: string;
+  className?: string;
   type?: "button" | "submit" | "reset";
 };
 
-const Button = ({ onClick, variant, children, classNames, type }: ButtonProps) => {
+const Button = ({ onClick, variant, children, className, type }: ButtonProps) => {
   const classBuilder = (variant: string | undefined) => {
     switch (variant) {
       case "primary":
@@ -23,7 +24,7 @@ const Button = ({ onClick, variant, children, classNames, type }: ButtonProps) =
   return (
     <button
       type={type}
-      className={`${classBuilder(variant)} ${classNames}
+      className={`${classBuilder(variant)} ${className}
       p-8px w-343px h-56px border-none rounded-16px font-size-18px font-600 pointer`}
       onClick={onClick}
     >

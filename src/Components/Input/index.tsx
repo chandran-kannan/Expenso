@@ -67,7 +67,7 @@ const Input = ({
           }}
         >
           <span className="absolute r-30px b-10px">
-            {showPassword ? <Eye width={30} height={30} /> : <EyeSlash width={30} height={30} />}
+            {showPassword ? <Eye className='w-30px h-30px' /> : <EyeSlash className='w-30px h-30px' />}
           </span>
         </i>
       ) : null}
