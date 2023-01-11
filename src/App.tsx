@@ -2,8 +2,8 @@ import RoutesWrapper from "./Routes";
 
 const App = () => {
   return (
-    <div>
-      <RoutesWrapper/>
+    <div className="h-full">
+      <RoutesWrapper />
     </div>
   );
 };
