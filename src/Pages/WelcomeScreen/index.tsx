@@ -11,14 +11,10 @@ const WelcomeScreen = () => {
       <div>
         <Carousel />
       </div>
-      <div className="mt-33px">
-        <Button variant="primary" onClick={() => navigate("/signup")}>
-          Sign Up
-        </Button>
-        <div className="mt-16px">
-          <Button variant="secondry" onClick={() => navigate("/login")}>
-            Login
-          </Button>
+      <div className='mt-33px'>
+        <Button variant="primary" onClick={() => navigate('/signup')}>Sign Up</Button>
+        <div className='mt-16px'>
+          <Button variant="secondary" onClick={() => navigate('/login')}>Login</Button>
         </div>
       </div>
     </div>

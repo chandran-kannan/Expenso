@@ -1,7 +1,7 @@
 export type ButtonProps = {
   onClick?: () => void;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  variant?: string;
+  variant?: 'primary' | 'secondary'| 'text' |undefined;
   children?: string;
   className?: string;
   type?: "button" | "submit" | "reset";

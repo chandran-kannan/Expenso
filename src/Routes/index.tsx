@@ -1,8 +1,7 @@
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Routes } from 'react-router';
-import LoginScreen from '../Pages/LoginScreen';
+import LoginScreen from '../Pages/Login';
 import WelcomeScreen from "../Pages/WelcomeScreen";
-
 import ForgotPassword from "../Pages/ForgotPassword";
 
 const RoutesWrapper = () => {

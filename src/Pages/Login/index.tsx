@@ -70,7 +70,7 @@ const Login = () => {
   return (
     <div>
       <div className="pt-46px flex flex-col items-center">
-        <Header leftIcon={<LeftArrow />} title="Login" />
+        <Header leftIcon={<LeftArrow className="w-24px h-16px" />} title="Login" />
       </div>
       <form
         onSubmit={handleSubmit}
