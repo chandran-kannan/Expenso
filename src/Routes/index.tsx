@@ -1,13 +1,13 @@
 import { Routes } from 'react-router';
 import { BrowserRouter, Route } from 'react-router-dom';
-import UserAvatar from '../Components/UserAvatar';
+import WelcomeScreen from '../Pages/Register/WelcomeScreen';
 
 const RoutesWrapper = () => {
   
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<UserAvatar className="h-32px w-32px" />}></Route>
+      <Route path="/" element={<WelcomeScreen />}></Route>
       </Routes>
     </BrowserRouter>
   );
