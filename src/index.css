@@ -310,13 +310,18 @@ body {
 
 /*Border*/
 
-.border-4px {
-  border: 4px solid #eee5ff;
+.border-1px-white {
+  border: 2px solid var(--white);
 }
 .border-1 {
   border: 1px solid;
 }
-
+.box-shadow{
+  box-shadow: inset 0 0 0 1px white
+}
+.outline{
+  outline: 1px solid var(--primary);
+}
 .border-none {
   border: none;
 }
@@ -399,7 +404,7 @@ body {
   margin-bottom:5px;
 }
 .border {
-  border: 1px solid #f1f1fa;
+  border: 1px solid var(--primary);
 }
 .outline-none {
   outline: none;

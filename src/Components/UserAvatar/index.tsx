@@ -1,21 +1,45 @@
-import React from 'react'
+import { DefaultAvatar } from '../../assets/Icons';
 
 type AvatarProps = {
-    className ?: string
-    alt ?: any
-    src ?: string
-}
+  name?: string;
+  imageUrl?: string | undefined;
+  className?: string;
+  onClick?: () => void;
+};
 
-const UserAvatar = ({className , src , alt} : AvatarProps) => {
-  return (
-    <div>
-        { src ? ( 
-        <img className={`w-32px h-32px rounded-50px border ${className}`} src={src} alt={alt} />
-        ) : (
-         <img className={`w-32p h-32px rounded-50px border ${className}`} src="https://www.kindpng.com/picc/m/22-223863_no-avatar-png-circle-transparent-png.png" alt={alt} />
-        )}
-    </div>
-  )
-}
+/* To use it =>  <UserAvatar name="Albert John" className="h-32px w-32px" /> */
+/* To use it =>  <UserAvatar imageUrl="https://www.kindpng.com/picc/m/236-2362818_anime-sempai-animegirl-heart-kawaii-cute-anime-girl.png" /> */
 
-export default UserAvatar
+const UserAvatar = ({ name, imageUrl, className, onClick }: AvatarProps) => {
+  if (name) {
+    return (
+      <div
+        onClick={onClick}
+        className={`rounded-50px border-1px-white flex justify-center items-center text-white bg-red outline ${className}`}
+      >
+        <h5>{`${name
+          .split(' ')
+          .map((name) => name[0])
+          .join('')
+          .toUpperCase()}`}</h5>
+      </div>
+    );
+  } else if (imageUrl) {
+    return (
+      <img
+        onClick={onClick}
+        className={`rounded-50px border-1px-white object-fit outline ${className}`}
+        src={imageUrl}
+        alt="Avatar"
+      />
+    );
+  } else {
+    return (
+      <div className={`rounded-50px border-1px-white flex justify-center outline  ${className}`}>
+        <DefaultAvatar height={28} width={28} />
+      </div>
+    );
+  }
+};
+
+export default UserAvatar;
