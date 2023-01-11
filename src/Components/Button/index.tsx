@@ -3,9 +3,10 @@ export type ButtonProps = {
   variant?: string;
   children?: string;
   classNames?: string;
+  type?: 'button' | 'submit' | 'reset';
 };
 
-const Button = ({ onClick, variant, children, classNames }: ButtonProps) => {
+const Button = ({ onClick, variant, children, classNames, type }: ButtonProps) => {
   const classBuilder = (variant: string | undefined) => {
     switch (variant) {
       case 'primary':
@@ -21,6 +22,7 @@ const Button = ({ onClick, variant, children, classNames }: ButtonProps) => {
 
   return (
     <button
+      type={type}
       className={`${classBuilder(variant)} ${classNames}
       p-8px w-343px h-56px border-none rounded-16px font-size-18px font-600 pointer`}
       onClick={onClick}

@@ -2,7 +2,7 @@ import RoutesWrapper from './Routes';
 
 const App = () => {
   return (
-    <div>
+    <div className="h-full">
       <RoutesWrapper />
     </div>
   );

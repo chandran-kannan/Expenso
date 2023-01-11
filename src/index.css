@@ -27,7 +27,7 @@
   --white: #ffffff;
   --grey: #e0e2e9;
 }
-
+#root,
 html,
 body {
   font-family: 'Inter', sans-serif;
@@ -72,6 +72,14 @@ body {
 /*Text*/
 .fs-32px {
   font-size: 32px;
+}
+
+/* display property */
+.display-block {
+  display: block;
+}
+.display-none {
+  display: none;
 }
 
 /*Flex-Property*/
@@ -180,7 +188,7 @@ body {
   height: 64px;
 }
 .h-full {
-  height: 100vh;
+  height: 100%;
 }
 
 /*Width*/
@@ -277,23 +285,25 @@ body {
 .mt-45px {
   margin-top: 45px;
 }
-.mx-auto {
-  margin-right: auto;
+.ml-auto {
   margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
 }
 .m-auto {
   margin: auto;
 }
-.m-bot-5px {
+.mb-5px {
   margin-bottom: 5px;
 }
-.m-bot-10px {
+.mb-10px {
   margin-bottom: 10px;
 }
-.m-top-10px {
+.mt-10px {
   margin-top: 10px;
 }
-.mt-16 {
+.mt-16px {
   margin-top: 16px;
 }
 
@@ -341,7 +351,7 @@ body {
 .border-4px {
   border: 4px solid #eee5ff;
 }
-.border-1 {
+.border-1px {
   border: 1px solid #f1f1fa;
 }
 
@@ -360,16 +370,25 @@ body {
 .p-8px {
   padding: 8px;
 }
-.px-15px {
-  padding: 0 15px;
+.pl-15px {
+  padding-left: 15px;
 }
-.px-20px {
-  padding: 0 20px;
+.pr-15px {
+  padding-right: 15px;
 }
-.px-10px {
-  padding: 0 10px;
+.pl-20px {
+  padding-left: 20px;
 }
-.p-16 {
+.pr-20px {
+  padding-right: 20px;
+}
+.pl-10px {
+  padding-left: 10px;
+}
+.pr-10px {
+  padding-right: 10px;
+}
+.p-16px {
   padding: 16px;
 }
 .pt-46px {
@@ -380,10 +399,7 @@ body {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* .font-size-18px {
-  font-size: 18px;
-} */
-.font-size-24px {
+.fs-24px {
   font-size: 24px;
 }
 .hero-shadow {
