@@ -2,9 +2,9 @@ import RoutesWrapper from "./Routes";
 
 const App = () => {
   return (
-    <div>
-     <RoutesWrapper/>
-     </div>
+    <div className="h-full">
+      <RoutesWrapper />
+    </div>
   );
 };
 

@@ -3,26 +3,29 @@ export type ButtonProps = {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   variant?: string;
   children?: string;
-  classNames?: string;
+  className?: string;
+  type?: "button" | "submit" | "reset";
 };
-const Button = ({ onClick, variant, children, classNames }: ButtonProps) => {
+
+const Button = ({ onClick, variant, children, className, type }: ButtonProps) => {
   const classBuilder = (variant: string | undefined) => {
     switch (variant) {
-      case 'primary':
-        return ' bg-primary text-white';
-      case 'secondry':
-        return 'bg-secondry text-primary';
-      case 'text':
-        return ' bg-none text-primary';
+      case "primary":
+        return " bg-primary text-white";
+      case "secondry":
+        return "bg-secondry text-primary";
+      case "text":
+        return " bg-none text-primary";
       default:
-        return 'bg-primary';
+        return "bg-primary";
     }
   };
 
   return (
     <button
-      className={`${classBuilder(variant)} 
-      p-8px w-343px h-56px border-none rounded-16px font-size-18px font-600 pointer ${classNames}`}
+      type={type}
+      className={`${classBuilder(variant)} ${className}
+      p-8px w-343px h-56px border-none rounded-16px font-size-18px font-600 pointer`}
       onClick={onClick}
     >
       {children}
