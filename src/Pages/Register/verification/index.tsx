@@ -57,7 +57,7 @@ function Verification() {
 
     return (
         <div className="w-full px-15px mt-20px">
-            <Header leftIcon={<LeftArrow height={18} width={18} />} title="Verification" />
+            <Header leftIcon={<LeftArrow className="w-24px h-16px items-center" />} title="Verification" />
             <div className="mt-56px">
                 <h2 className="fs-34px lh-44px w-80 text-black font-500">Enter your Verification Code</h2>
             </div>
