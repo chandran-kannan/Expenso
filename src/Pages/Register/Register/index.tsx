@@ -5,50 +5,66 @@ import Input from "../../../Components/Input";
 import Modal from "../../../Components/Modal";
 import { useState, useEffect } from "react";
 import "./checkbox.css"
+import { useNavigate } from "react-router-dom";
+
+type formvaluetype = {
+  id?: number;
+  name?: string;
+  email?:string;
+  password?:string | number;
+};
 
 const Register = () => {
-  const initialValue = { name: '', email: '', password: '' };
+  const initialValue = { name: '', email: '', password: '', terms: '' };
   const [show, setShow] = useState(false);
   const [formValues, setFormValues] = useState(initialValue);
-  const [formErrors, setFormErrors] = useState({});
+  const [formErrors, setFormErrors] = useState<formvaluetype>({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [checked, setChecked] = useState(false);
+  
   const handleChange = (e: any) => {
     const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+    setFormValues({ ...formValues, [name]: value }); 
   }
-
+  const handleChangeTwo = () => {
+    setChecked(!checked);
+  };
+  const navicate = useNavigate();
   const handleSubmit = (e: any) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+
   }
   useEffect(() => {
     console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
+    if (Object.keys(formErrors).length === 0 && isSubmit && checked) {
       console.log(formValues);
+      navicate('/verification');
     }
   }, [formErrors]);
 
   const validate = (values: any) => {
-    const errors = {};
+    const errors:formvaluetype = {};
     const namepat = /^[\a-zA-Z]*[\s]*[\a-zA-Z]*[\s]*[\a-zA-Z]*$/;
     const emailpat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const passwordpat = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?!.* ).{5,10}$/;
     if (!values.name) {
       errors.name = "Name is required";
-    } else if (!namepat.test(values.email)) {
+    } else if (!namepat.test(values.name)) {
       errors.name = "This is not a valid name";
     }
-    else if (!values.email) {
+    if (!values.email) {
       errors.email = "Email is required";
     } else if (!emailpat.test(values.email)) {
       errors.email = "This is not a valid Email";
     }
-    else if (!values.password) {
+    if (!values.password) {
       errors.password = "Password is required";
-    } else if (!passwordpat.test(values.email)) {
+    } else if (!passwordpat.test(values.password)) {
       errors.password = "This is not a valid password";
     }
+
     return errors;
   }
   return (
@@ -68,7 +84,7 @@ const Register = () => {
         <Input className="display-block mx-auto"
           name="email"
           value={formValues.email}
-          type="email"
+          type="text"
           onChange={handleChange}
           placeholder="Email" />
         <p className="w-full text-red fs-16px">{formErrors.email}</p>
@@ -85,9 +101,10 @@ const Register = () => {
             <span className="relative bottom-5px-c">By signing up, you agree
               to the <span className="text-primary font-500" onClick={() => setShow(true)}>
                 terms of service and Privacy Policy.</span></span>
-            <input type="checkbox" name="" />
+            <input type="checkbox" checked={checked} onChange={handleChangeTwo} />
             <span className="checkmark absolute top-0-c left-0-c height-25px-c width-25px-c border-2px-c radius-5px"></span>
           </label>
+          <p className="w-full text-red fs-16px">{isSubmit ? (checked ? null : "Please select the checkbox"):null}</p>
           <Modal onClose={() => setShow(false)} show={show} />
         </div>
         <div className="">
