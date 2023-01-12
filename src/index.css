@@ -366,7 +366,7 @@ body {
 
 /*Border*/
 
-.border-1px-white {
+.border-2px-white {
   border: 2px solid var(--white);
 }
 .border-1px {
