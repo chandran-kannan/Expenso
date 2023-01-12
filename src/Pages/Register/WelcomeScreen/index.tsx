@@ -1,5 +1,5 @@
 
-import Carousel from '../../../Components/carousel';
+import Carousel from '../../../Components/Carousel';
 import Button from '../../../Components/Button';
 import { useNavigate } from 'react-router-dom';
 
