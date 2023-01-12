@@ -8,11 +8,14 @@ type AvatarProps = {
 };
 
 /* To use it =>  <UserAvatar name="Albert John" className="h-32px w-32px" /> */
-/* To use it =>  <UserAvatar src="https://www.kindpng.com/picc/m/236-2362818_anime-sempai-animegirl-heart-kawaii-cute-anime-girl.png" /> */
+/* To use it =>  <UserAvatar src="https://www.kindpng.com/picc/m/236-2362818_anime-sempai-animegirl-heart-kawaii-cute-anime-girl.png" name="Albert John" /> */
 
 const UserAvatar = ({ name, src, className, onClick }: AvatarProps) => {
   const AvatarClasses = "rounded-50px border-2px-white outline flex justify-center";
-  if (name) {
+  if (src) {
+    return <img onClick={onClick} className={` object-fit ${className} ${AvatarClasses}`} src={src} alt="Avatar" />;
+    
+  } else if (name) {
     return (
       <div
         onClick={onClick}
@@ -25,8 +28,6 @@ const UserAvatar = ({ name, src, className, onClick }: AvatarProps) => {
           .toUpperCase()}`}</h5>
       </div>
     );
-  } else if (src) {
-    return <img onClick={onClick} className={` object-fit ${className} ${AvatarClasses}`} src={src} alt="Avatar" />;
   } else {
     return (
       <div className={`${className} ${AvatarClasses}`}>
