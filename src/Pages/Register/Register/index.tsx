@@ -52,17 +52,17 @@ const Register = () => {
     if (!values.name) {
       errors.name = "Name is required";
     } else if (!namepat.test(values.name)) {
-      errors.name = "This is not a valid name";
+      errors.name = "Invalid value for name. Name field should contain only letters. ";
     }
     if (!values.email) {
       errors.email = "Email is required";
     } else if (!emailpat.test(values.email)) {
-      errors.email = "This is not a valid Email";
+      errors.email = "Please enter valid email(sample@xyz.com)";
     }
     if (!values.password) {
       errors.password = "Password is required";
     } else if (!passwordpat.test(values.password)) {
-      errors.password = "This is not a valid password";
+      errors.password = "Password must contain one digit from 1 to 9,one lowercase letter, one uppercase letter, one special character, no space, and it must be 5-10 characters long.";
     }
 
     return errors;
@@ -79,7 +79,7 @@ const Register = () => {
           value={formValues.name}
           onChange={handleChange}
           placeholder="Name" />
-        <p className="w-full text-red fs-16px">{formErrors.name}</p>
+        <p className="w-full text-red fs-12px">{formErrors.name}</p>
 
         <Input className="display-block mx-auto"
           name="email"
@@ -87,14 +87,14 @@ const Register = () => {
           type="text"
           onChange={handleChange}
           placeholder="Email" />
-        <p className="w-full text-red fs-16px">{formErrors.email}</p>
+        <p className="w-full text-red fs-12px">{formErrors.email}</p>
 
         <Input className="display-block mx-auto" type="password"
           name="password"
           value={formValues.password}
           onChange={handleChange}
           placeholder="password" />
-        <p className="w-full text-red fs-16px">{formErrors.password}</p>
+        <p className="w-full text-red fs-12px">{formErrors.password}</p>
 
         <div className="w-full display-block">
           <label className="container display-block relative pointer-c pl-c fs-c lh-c w-user-select">
@@ -104,7 +104,7 @@ const Register = () => {
             <input type="checkbox" checked={checked} onChange={handleChangeTwo} />
             <span className="checkmark absolute top-0-c left-0-c height-25px-c width-25px-c border-2px-c radius-5px"></span>
           </label>
-          <p className="w-full text-red fs-16px">{isSubmit ? (checked ? null : "Please select the checkbox"):null}</p>
+          <p className="w-full text-red fs-12px">{isSubmit ? (checked ? null : "Please select the checkbox"):null}</p>
           <Modal onClose={() => setShow(false)} show={show} />
         </div>
         <div className="">
