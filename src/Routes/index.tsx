@@ -3,6 +3,8 @@ import { Routes } from "react-router";
 import LoginScreen from "../Pages/Login";
 import WelcomeScreen from "../Pages/WelcomeScreen";
 import ForgotPassword from "../Pages/ForgotPassword";
+import Register from "../Pages/Register/Register";
+import Verification from "../Pages/Register/verification";
 
 import Button from "../Components/Button";
 // import Pin from '../Pages/Pinset';
@@ -25,6 +27,8 @@ const RoutesWrapper = () => {
         <Route path="/addaccount" element={<AddAccount />}></Route>
         <Route path="/enterpin" element={<EnterPin />}></Route>
         <Route path="/youareset" element={<YouAreSet />}></Route>
+        <Route path="/register" element={<Register />} />
+        <Route path="/verification" element={<Verification />} />
       </Routes>
     </BrowserRouter>
   );
