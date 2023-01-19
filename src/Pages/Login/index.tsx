@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { emailValidator, passwordValidator } from "../../Utils/Validators";
+import { isEmailValid, isPasswordValid } from "../../Utils/Validators";
 import { LeftArrow } from "../../assets/Icons";
 import Button from "../../Components/Button";
 import Input from "../../Components/Input";
@@ -25,7 +25,7 @@ const Login = () => {
     InputValidation();
   };
   const InputValidation = () => {
-    if (emailValidator(values.email) && passwordValidator(values.password)) {
+    if (isEmailValid(values.email) && isPasswordValid(values.password)) {
       navigate("/WelcomeScreen");
     } else {
       if (values.email === "" && values.password === "") {
@@ -35,8 +35,8 @@ const Login = () => {
           errorPassword: "Please Enter your Password"
         }));
       } else if (
-        emailValidator(values.email) === false &&
-        passwordValidator(values.password) === false
+        isEmailValid(values.email) === false &&
+        isPasswordValid(values.password) === false
       ) {
         setValues((prev) => ({
           ...prev,
@@ -45,8 +45,8 @@ const Login = () => {
             "Password must contain one digit from 1 to 9,one lowercase letter, one uppercase letter, one special character, no space, and it must be 5-10 characters long."
         }));
       } else if (
-        emailValidator(values.email) === true &&
-        passwordValidator(values.password) === false
+        isEmailValid(values.email) === true &&
+        isPasswordValid(values.password) === false
       ) {
         setValues((prev) => ({
           ...prev,
@@ -54,8 +54,8 @@ const Login = () => {
             "Password must contain one digit from 1 to 9,one lowercase letter, one uppercase letter, one special character, no space, and it must be 5-10 characters long."
         }));
       } else if (
-        emailValidator(values.email) === false &&
-        passwordValidator(values.password) === true
+        isEmailValid(values.email) === false &&
+        isPasswordValid(values.password) === true
       ) {
         setValues((prev) => ({
           ...prev,

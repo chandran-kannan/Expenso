@@ -15,7 +15,7 @@ const BottomNavigation = () => {
   const [changeIcon, setChangeIcon] = useState<boolean>(false);
 
   const handleHomeButton = () => {
-    setChangeIcon(!changeIcon);
+    setChangeIcon((prev) => !prev);
   };
   return (
     <div className="mt-200px flex">
