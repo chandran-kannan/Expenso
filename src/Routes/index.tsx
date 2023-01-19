@@ -3,6 +3,7 @@ import { Routes } from 'react-router';
 import LoginScreen from '../Pages/Login';
 import WelcomeScreen from "../Pages/WelcomeScreen";
 import ForgotPassword from "../Pages/ForgotPassword";
+import BottomNavigation from '../Components/BottomNavigation';
 
 const RoutesWrapper = () => {
   return (
@@ -11,6 +12,7 @@ const RoutesWrapper = () => {
         <Route path="/" element={<WelcomeScreen />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/Bottomnavigation" element={<BottomNavigation />} />
       </Routes>
     </BrowserRouter>
   );

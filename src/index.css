@@ -27,6 +27,7 @@
   --light-gray: #f1f1fa;
   --white: #ffffff;
   --grey: #e0e2e9;
+  --shade-grey: #c6c6c6;
 }
 #root,
 html,
@@ -554,4 +555,113 @@ body {
 }
 .pr-15px {
   padding-right: 15px;
+}
+/*
+Bottom Navigation Component
+*/
+.w-80px {
+  width: 80px;
+}
+.h-80px {
+  height: 80px;
+}
+.b-95px {
+  bottom: 95px;
+}
+.l-49px {
+  left: -49px;
+}
+.w-56px {
+  width: 56px;
+}
+.mt-200px {
+  margin-top: 200px;
+}
+.fs-10px {
+  font-size: 10px;
+}
+.h-70px {
+  height: 70px;
+}
+.h-24px {
+  height: 70px;
+}
+.text-shade-grey {
+  color: #c6c6c6;
+}
+.rounded-50per {
+  border-radius: 50%;
+}
+.mt-50px {
+  margin-top: 50px;
+}
+.border-10px {
+  border: 10px solid #eee5ff;
+}
+.p-12px {
+  padding: 12px;
+}
+.transform-10px {
+  transform: translate(0px, -9px);
+}
+.gap-55px {
+  gap: 55px;
+}
+.b-67px {
+  bottom: 67px;
+}
+.l-50px {
+  left: 50px;
+}
+.w-187px {
+  width: 187px;
+}
+.border-top-right-radius-38px {
+  border-top-right-radius: 38px;
+}
+.border-top-right-radius-10px {
+  border-top-right-radius: 10px;
+}
+.border-top-left-radius-10px {
+  border-top-left-radius: 10px;
+}
+.border-top-left-radius-38px {
+  border-top-left-radius: 38px;
+}
+.border-top-right-radius-37px {
+  border-top-right-radius: 37px;
+}
+.border-top-left-radius-37px {
+  border-top-left-radius: 37px;
+}
+
+.border-top-radius-38px {
+  border-top: 38px;
+}
+.h-50px {
+  height: 50px;
+}
+.b-0px {
+  bottom: 0;
+}
+.w-100percent {
+  width: 90%;
+}
+.h-100vh {
+  height: 100vh;
+}
+.fixed {
+  position: fixed;
+}
+.p-10px {
+  padding: 10px;
+}
+.border-w-5px {
+  border-width: 5px;
+}
+.border-bg-secondary {
+  border-color: #eee5ff;
+}
+.border-style-solid {
+  border-style: solid;
 }

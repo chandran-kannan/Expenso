@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import Button from '../../Components/Button';
-import Input from '../../Components/Input';
-import Header from '../../Components/Header';
-import { LeftArrow } from '../../assets/Icons';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { emailValidator, passwordValidator } from "../../Utils/Validators";
+import { LeftArrow } from "../../assets/Icons";
+import Button from "../../Components/Button";
+import Input from "../../Components/Input";
+import Header from "../../Components/Header";
 
 const Login = () => {
   const [values, setValues] = useState<{
@@ -12,59 +13,55 @@ const Login = () => {
     errorEmail: string;
     errorPassword: string;
   }>({
-    email: '',
-    password: '',
-    errorEmail: '',
-    errorPassword: '',
+    email: "",
+    password: "",
+    errorEmail: "",
+    errorPassword: ""
   });
   const navigate = useNavigate();
-  console.log('values', values);
   const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
     setValues((prev) => ({ ...prev, [event.target.name]: event.target.value }));
     InputValidation();
   };
   const InputValidation = () => {
-    const check = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?!.* ).{5,10}$/;
-
-    if (/\S+@\S+\.\S+/.test(values.email) && check.test(values.password)) {
-      navigate('/WelcomeScreen');
+    if (emailValidator(values.email) && passwordValidator(values.password)) {
+      navigate("/WelcomeScreen");
     } else {
-      if (values.email === '' && values.password === '') {
+      if (values.email === "" && values.password === "") {
         setValues((prev) => ({
           ...prev,
-          errorEmail: 'Please Enter Your Email-Id',
-          errorPassword: 'Please Enter your Password',
+          errorEmail: "Please Enter Your Email-Id",
+          errorPassword: "Please Enter your Password"
         }));
       } else if (
-        /\S+@\S+\.\S+/.test(values.email) === false &&
-        check.test(values.password) === false
+        emailValidator(values.email) === false &&
+        passwordValidator(values.password) === false
       ) {
         setValues((prev) => ({
           ...prev,
-          errorEmail: 'Please Enter Valid Email (sample@xyz.com)',
+          errorEmail: "Please Enter Valid Email (sample@xyz.com)",
           errorPassword:
-            'Password must contain one digit from 1 to 9,one lowercase letter, one uppercase letter, one special character, no space, and it must be 5-10 characters long.',
+            "Password must contain one digit from 1 to 9,one lowercase letter, one uppercase letter, one special character, no space, and it must be 5-10 characters long."
         }));
       } else if (
-        /\S+@\S+\.\S+/.test(values.email) === true &&
-        check.test(values.password) === false
+        emailValidator(values.email) === true &&
+        passwordValidator(values.password) === false
       ) {
         setValues((prev) => ({
           ...prev,
           errorPassword:
-            'Password must contain one digit from 1 to 9,one lowercase letter, one uppercase letter, one special character, no space, and it must be 5-10 characters long.',
+            "Password must contain one digit from 1 to 9,one lowercase letter, one uppercase letter, one special character, no space, and it must be 5-10 characters long."
         }));
       } else if (
-        /\S+@\S+\.\S+/.test(values.email) === false &&
-        check.test(values.password) === true
+        emailValidator(values.email) === false &&
+        passwordValidator(values.password) === true
       ) {
         setValues((prev) => ({
           ...prev,
-          errorEmail: 'Please Enter Valid Email',
+          errorEmail: "Please Enter Valid Email"
         }));
       }
-
     }
   };
   return (
@@ -100,7 +97,7 @@ const Login = () => {
       </div>
       <div className="mt-45px flex items-center justify-center">
         <span className="font-size-16px text-light-grey font-500">
-          Don’t have an account yet?{' '}
+          Don’t have an account yet?{" "}
           <Link className="text-decoration-none font-size-16px text-primary font-600" to="/SignUp">
             Sign Up
           </Link>
