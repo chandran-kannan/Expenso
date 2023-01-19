@@ -22,16 +22,22 @@ const Register = () => {
   const [isSubmit, setIsSubmit] = useState(false);
   const [checked, setChecked] = useState(false);
   
-  const handleChange = (e: any) => {
-    const { name, value } = e.target;
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
     setFormValues({ ...formValues, [name]: value }); 
   }
   const handleChangeTwo = () => {
     setChecked(!checked);
   };
   const navicate = useNavigate();
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
+  const loginPage = useNavigate();
+
+  const clicktoLogin = ()=>
+  {
+    loginPage('/login');
+  }
+  const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
 
@@ -57,12 +63,12 @@ const Register = () => {
     if (!values.email) {
       errors.email = "Email is required";
     } else if (!emailpat.test(values.email)) {
-      errors.email = "Please enter valid email(sample@xyz.com)";
+      errors.email = "Please enter valid email (sample@xyz.com)";
     }
     if (!values.password) {
       errors.password = "Password is required";
     } else if (!passwordpat.test(values.password)) {
-      errors.password = "Password must contain one digit from 1 to 9,one lowercase letter, one uppercase letter, one special character, no space, and it must be 5-10 characters long.";
+      errors.password = "Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 5-10 characters long.";
     }
 
     return errors;
@@ -73,7 +79,7 @@ const Register = () => {
         <Header leftIcon={<LeftArrow className="w-24px h-16px items-center" />} title="Sign Up" />
       </div>
 
-      <form className="mt-56px flex mx-auto flex-col gap-24px" onSubmit={handleSubmit}>
+      <form className="mt-56px flex mx-auto flex-col gap-24px mx-w-343px" onSubmit={handleSubmit}>
         <Input className="display-block mx-auto" type="text"
           name="name"
           value={formValues.name}
@@ -97,12 +103,12 @@ const Register = () => {
         <p className="w-full text-red fs-12px">{formErrors.password}</p>
 
         <div className="w-full display-block">
-          <label className="container display-block relative pointer-c pl-c fs-c lh-c w-user-select">
-            <span className="relative bottom-5px-c">By signing up, you agree
+          <label className="container display-block relative pointer pl-38px fs-18px lh-25px w-user-select">
+            <span className="relative b-5px">By signing up, you agree
               to the <span className="text-primary font-500" onClick={() => setShow(true)}>
                 terms of service and Privacy Policy.</span></span>
             <input type="checkbox" checked={checked} onChange={handleChangeTwo} />
-            <span className="checkmark absolute top-0-c left-0-c height-25px-c width-25px-c border-2px-c radius-5px"></span>
+            <span className="checkmark absolute t-0 l-0 h-25px w-25px border-3px rounded-5px"></span>
           </label>
           <p className="w-full text-red fs-12px">{isSubmit ? (checked ? null : "Please select the checkbox"):null}</p>
           <Modal onClose={() => setShow(false)} show={show} />
@@ -121,10 +127,10 @@ const Register = () => {
           <img className="w-30px mr-5px" src="src/assets/Images/flat-color-icons-google.png" /> Sign Up with Google</p>
       </div>
       <div className="w-full mt-20px mb-20px">
-        <p className="fs-18px text-center text-grey2">Already have an account?<span className="text-primary "> login.</span></p>
+        <p className="fs-18px text-center text-grey2">Already have an account?<span className="text-primary" onClick={clicktoLogin}> login.</span></p>
       </div>
     </div>
   );
 };
-
+ 
 export default Register;

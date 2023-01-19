@@ -3,9 +3,11 @@ import Header from "../../../Components/Header";
 import { LeftArrow } from "../../../assets/Icons";
 import PinInput from "../../../Components/PinInput";
 import Button from "../../../Components/Button";
+import { useNavigate } from "react-router-dom";
 let hours = '0'
 let minutes = '5'
-let seconds = '0'
+let seconds = '0' 
+
 function Verification() {
     const [paused, setPaused] = useState(false);
     const [over, setOver] = useState(false);
@@ -14,6 +16,14 @@ function Verification() {
         minutes: parseInt(minutes),
         seconds: parseInt(seconds)
     });
+
+    const homePage = useNavigate(); 
+    const toHome =()=>
+    {
+        homePage('/')
+    }
+    
+
     const tick = () => {
         if (paused || over) return;
         if (time.hours == 0 && time.minutes == 0 && time.seconds == 0)
@@ -74,7 +84,7 @@ function Verification() {
                 <p className="text-primary fs-16px lh-25px mt-10px" onClick={() => reset()}>I didn’t received the code? Send again</p>
             </div>
             <div className="mt-30px">
-                <Button classNames="display-block mx-auto fs-18px" variant="primary">Verify</Button>
+                <Button className="display-block mx-auto fs-18px" onClick={toHome} variant="primary">Verify</Button>
             </div>
         </div>
     )
