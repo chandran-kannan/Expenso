@@ -12,12 +12,11 @@ const AddAccount = () => {
   const [name, setName] = useState<string>("");
   const navigate = useNavigate();
   const selectedValue = (val: string) => {
-    console.log(val);
     val === "Bank" ? setShow(true) : setShow(false);
+    val === "Bank" ? setName("name") : setName(val);
   };
   const handleChange = (i: string) => {
     setName(i);
-    console.log(i, "bb");
   };
 
   const icons = [
@@ -72,7 +71,7 @@ const AddAccount = () => {
           <div>
             <DropDown
               className={"text-light-grey"}
-              options={["Bank", "UPI", "Wallet"]}
+              options={["Bank", "Wallet"]}
               placeholder={"Account Type"}
               onChange={selectedValue}
             />
