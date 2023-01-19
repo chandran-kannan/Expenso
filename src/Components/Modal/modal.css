@@ -1,0 +1,10 @@
+/* modal */
+.modal.show {
+    opacity: 1;
+    pointer-events: visible;
+}
+
+.modal-header,
+.modal-footer {
+    padding: 10px;
+}
