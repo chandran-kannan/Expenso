@@ -5,6 +5,7 @@ import WelcomeScreen from "../Pages/WelcomeScreen";
 import ForgotPassword from "../Pages/ForgotPassword";
 import Register from '../Pages/Register/Register';
 import Verification from '../Pages/Register/verification';
+import HomeScreen from '../Pages/HomeScreen';
 
 const RoutesWrapper = () => {
   return (
@@ -15,6 +16,7 @@ const RoutesWrapper = () => {
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/register" element={<Register />} />
         <Route path="/verification" element={<Verification />} />
+        <Route path="/homescreen" element={<HomeScreen />} />
       </Routes>
     </BrowserRouter>
   );
