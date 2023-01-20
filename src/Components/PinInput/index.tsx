@@ -3,9 +3,14 @@ import React, { useState } from "react";
 type pinintput = {
   maxLength: number;
   visible: boolean;
+  className?: string;
+  value?: string;
+  disabled?: boolean;
+  val?: number[];
+  onChange?: () => void;
 };
 
-const PinInput = ({ maxLength, visible }: pinintput) => {
+const PinInput = ({ maxLength, visible, className, value, onChange, val, disabled }: pinintput) => {
   const [inputValues, setInputValues] = useState<any>({});
   const [outPutValues, setOutPutValues] = useState<any>({});
 
@@ -14,31 +19,30 @@ const PinInput = ({ maxLength, visible }: pinintput) => {
       {[...Array(maxLength)].map((el, inputIndex: number) =>
         visible ? (
           <input
+            disabled={disabled}
             key={inputIndex}
             id={String(inputIndex)}
             maxLength={1}
             type="password"
-            className={`w-32px h-32px rounded-50px border-4px text-center pointer outline caret-color
-               ${inputValues[inputIndex] ? " bg-primary " : " "} `}
+            className={`w-32px h-32px rounded-50px border-4px text-center pointer outline caret-color  text-transparent ${className}
+               ${val?.[inputIndex] !== undefined && "bg-white"} `}
+            value={val?.[inputIndex]}
             name={String(inputIndex)}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              // console.log("inputIndex", event.target.name);
               setInputValues({
                 ...inputValues,
                 [event.target.name]: event.target.value
               });
+
               const next = document.getElementById(String(inputIndex + 1)) as HTMLInputElement;
               next?.focus();
-              // next?.select();
             }}
             onKeyUp={(event) => {
-              console.count("input 2");
               if (event.key === "Backspace") {
                 const previous = document.getElementById(
                   String(inputIndex - 1)
                 ) as HTMLInputElement;
                 previous?.focus();
-                // previous?.select();
               }
             }}
           />
@@ -47,6 +51,7 @@ const PinInput = ({ maxLength, visible }: pinintput) => {
             key={inputIndex}
             id={String(inputIndex)}
             maxLength={1}
+            disabled={disabled}
             type="text"
             className={` rounded-50px border-none text-center pointer outline caret-color font-32px font-700
           ${outPutValues[inputIndex] ? " bg-none w-32px h-32px  " : "w-16px h-16px grey"}`}
@@ -57,19 +62,16 @@ const PinInput = ({ maxLength, visible }: pinintput) => {
                   String(inputIndex - 1)
                 ) as HTMLInputElement;
                 previous?.focus();
-                // previous?.select();
               }
             }}
             name={String(inputIndex)}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              // console.log("inputIndex", event.target.name);
               setOutPutValues({
                 ...outPutValues,
                 [event.target.name]: event.target.value
               });
               const next = document.getElementById(String(inputIndex + 1)) as HTMLInputElement;
               next?.focus();
-              // next?.select();
             }}
           />
         )

@@ -5,9 +5,10 @@ type dropDown = {
   options?: string[];
   placeholder?: string;
   onChange?: (value: string) => void;
+  className?: string;
 };
 
-const DropDown = ({ options, placeholder, onChange }: dropDown) => {
+const DropDown = ({ options, placeholder, onChange, className }: dropDown) => {
   const [value, setValue] = useState<string>("");
   const [showOptions, setShowOptions] = useState<boolean>(false);
   const changeValue = (val: string) => {
@@ -22,7 +23,7 @@ const DropDown = ({ options, placeholder, onChange }: dropDown) => {
           setShowOptions(!showOptions);
         }}
       >
-        <span>{value === "" ? placeholder : value}</span>
+        <span className={`${!value && className}`}>{value === "" ? placeholder : value}</span>
         <img src={Vector} alt="" className="w-20 h-10"></img>
       </div>
       <div
