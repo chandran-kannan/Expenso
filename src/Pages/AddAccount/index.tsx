@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import DropDown from "../../Components/DropDown";
 import Input from "../../Components/Input";
 import Header from "../../Components/Header";
@@ -6,19 +6,27 @@ import { LeftArrow, RightArrow } from "../../assets/Icons";
 import Button from "../../Components/Button";
 import { Chase, Paypal, Citi, BankOfAmerica, Jago, Mandiri, Bca } from "../../assets/Images";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../../Store";
+
 const AddAccount = () => {
+  const { value, setValue } = useContext(Context);
+  console.log("value", value);
+
   const [amount, SetAmount] = useState<string>("0.00");
   const [show, setShow] = useState<boolean>(false);
   const [name, setName] = useState<string>("");
   const navigate = useNavigate();
   const selectedValue = (val: string) => {
     val === "Bank" ? setShow(true) : setShow(false);
-    val === "Bank" ? setName("name") : setName(val);
-  };
-  const handleChange = (i: string) => {
-    setName(i);
+    val !== "Bank" && setName(val);
   };
 
+  const handleChange = (i: string) => {
+    setName(i);
+    setValue(i);
+    console.log("setValue", value);
+  };
   const icons = [
     {
       name: "Chase",
@@ -94,7 +102,7 @@ const AddAccount = () => {
           variant="primary"
           children="continue"
           className="ml-auto mr-auto mb-16px"
-          onClick={() => name && navigate("/youareset")}
+          onClick={() => navigate("/account")}
         />
       </div>
     </div>

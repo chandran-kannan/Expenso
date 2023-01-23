@@ -13,7 +13,8 @@ import Pinset from "../Pages/Pinset";
 import AddAccount from "../Pages/AddAccount";
 import EnterPin from "../Pages/EnterPin";
 import YouAreSet from "../Pages/YouAreSet";
-
+import Account from "../Pages/Account";
+import { Data } from "../Store";
 const RoutesWrapper = () => {
   return (
     <BrowserRouter>
@@ -29,6 +30,8 @@ const RoutesWrapper = () => {
         <Route path="/youareset" element={<YouAreSet />}></Route>
         <Route path="/register" element={<Register />} />
         <Route path="/verification" element={<Verification />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/store" element={<Data />} />
       </Routes>
     </BrowserRouter>
   );

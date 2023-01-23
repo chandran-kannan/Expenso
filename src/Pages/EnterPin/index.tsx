@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Delet, RightArrow } from "../../assets/Icons";
-import PinInput from "../../Components/PinInput";
 const EnterPin = () => {
   const [enterPin, setEnterPin] = useState<number[]>([]);
   const [count, setCount] = useState<number>(0);
