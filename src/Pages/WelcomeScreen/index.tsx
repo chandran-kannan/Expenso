@@ -1,7 +1,6 @@
-
-import Carousel from '../../Components/Carousel';
-import Button from '../../Components/Button';
-import { useNavigate } from 'react-router-dom';
+import Carousel from "../../Components/Carousel";
+import Button from "../../Components/Button";
+import { useNavigate } from "react-router-dom";
 
 const WelcomeScreen = () => {
   const navigate = useNavigate();
@@ -11,10 +10,14 @@ const WelcomeScreen = () => {
       <div>
         <Carousel />
       </div>
-      <div className='mt-33px'>
-        <Button variant="primary" onClick={() => navigate('/signup')}>Sign Up</Button>
-        <div className='mt-16px'>
-          <Button variant="secondry" onClick={() => navigate('/login')}>Login</Button>
+      <div className="mt-33px">
+        <Button variant="primary" onClick={() => navigate("/signup")}>
+          Sign Up
+        </Button>
+        <div className="mt-16px">
+          <Button variant="secondry" onClick={() => navigate("/login")}>
+            Login
+          </Button>
         </div>
       </div>
     </div>
