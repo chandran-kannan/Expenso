@@ -63,3 +63,27 @@ export const Google = ({ className, fill }: IconProps) => {
     </svg>
   );
 };
+export const MenuNotification = ({ className, fill }: IconProps) => {
+  return (
+    <svg viewBox="0 0 32 32" className={className} xmlns="http://www.w3.org/2000/svg">
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M13.3333 16.0002C13.3333 14.5274 14.5272 13.3335 15.9999 13.3335C17.4727 13.3335 18.6666 14.5274 18.6666 16.0002C18.6666 17.4729 17.4727 18.6668 15.9999 18.6668C14.5272 18.6668 13.3333 17.4729 13.3333 16.0002Z"
+        fill={fill}
+      />
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M22.6667 16.0002C22.6667 14.5274 23.8607 13.3335 25.3334 13.3335C26.8062 13.3335 28.0001 14.5274 28.0001 16.0002C28.0001 17.4729 26.8062 18.6668 25.3334 18.6668C23.8607 18.6668 22.6667 17.4729 22.6667 16.0002Z"
+        fill={fill}
+      />
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M4 16.0002C4 14.5274 5.19391 13.3335 6.66667 13.3335C8.13943 13.3335 9.33333 14.5274 9.33333 16.0002C9.33333 17.4729 8.13943 18.6668 6.66667 18.6668C5.19391 18.6668 4 17.4729 4 16.0002Z"
+        fill={fill}
+      />
+    </svg>
+  );
+};
