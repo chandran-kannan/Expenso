@@ -4,7 +4,10 @@ import Tab from "../../Components/Tab";
 const HomeScreen = ()=>
 {
     return(
+        <React.Fragment>
         <Tab />
+         <
+        </React.Fragment>
     )
 }
 
