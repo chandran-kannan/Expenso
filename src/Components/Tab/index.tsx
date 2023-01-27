@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./tab.css";
+import Shopping from "../Shopping";
 const Tab = () => {
 
     const [ToggleState, settoggleState] = useState(1);
@@ -23,33 +24,9 @@ const Tab = () => {
                         <h4>Recent Transaction</h4>
                         <button>See All</button>
                     </div>
-                    <div className="content-box">
-                        <div className="images">
-                      <img className="wid-box" src="src/assets/images/Frame-5.png" alt="frame" />
-                      </div>
-                      <div className="desc-side">
-                        <h4>Shopping</h4>
-                        <p>Buy some grocery</p>
-                      </div>
-                      <div className="payment-side">
-                        <h4>- $120</h4>
-                        <p>10:00 AM</p>
-                      </div>
-                    </div>
-
-                    <div className="content-box">
-                        <div className="images">
-                      <img className="wid-box" src="src/assets/images/Frame-5.png" alt="frame" />
-                      </div>
-                      <div className="desc-side">
-                        <h4>Subscription</h4>
-                        <p>Disney+ Annual..</p>
-                      </div>
-                      <div className="payment-side">
-                        <h4>- $80</h4>
-                        <p>03:30 PM</p>
-                      </div>
-                    </div>
+                    <Shopping icon="src/assets/images/Frame-5.png" title="Shopping" desc="Buy some grocery" price="- $120" time="10:00 AM" />
+                    <Shopping icon="src/assets/images/Frame-5.png" title="Subscription" desc="Disney+ Annual.." price="- $80" time="03:30 PM" />
+                    <Shopping icon="src/assets/images/Frame-5.png" title="Food" desc="Buy a ramen" price="- $32" time="07:30 PM" />
 
                     
                 </div>
