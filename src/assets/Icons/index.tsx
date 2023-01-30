@@ -1,4 +1,5 @@
 type IconProps = {
+  
   className?: string;
   fill?: string;
 };
@@ -61,6 +62,15 @@ export const Google = ({ className, fill }: IconProps) => {
         d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
       />
     </svg>
+  );
+};
+export const DefaultAvatar = ({ className }: IconProps) => {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2Z" fill="black"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.99992 13C7.33717 13 5.73815 13.7585 4.80107 14.9004C4.32547 15.48 3.99113 16.1971 3.96202 16.9919C3.93229 17.8036 4.22527 18.5958 4.8295 19.2871C6.30206 20.9716 8.65319 22 11.9999 22C15.3466 22 17.6978 20.9716 19.1703 19.2871C19.7746 18.5958 20.0675 17.8036 20.0378 16.9919C20.0087 16.1971 19.6744 15.48 19.1988 14.9004C18.2617 13.7585 16.6627 13 14.9999 13H8.99992Z" fill="black"/>
+    </svg>
+    
   );
 };
 export const MenuNotification = ({ className, fill }: IconProps) => {
