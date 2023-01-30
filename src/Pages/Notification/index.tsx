@@ -19,7 +19,7 @@ const Notification = () => {
 
   return (
     <div>
-      <div className="mt-44px mb-20px relative">
+      <div className="relative mb-20px">
         <Header
           leftIcon={<LeftArrow className="w-24px h-24px" />}
           title="Notification"
@@ -48,7 +48,7 @@ const Notification = () => {
       </div>
       {!removeAll && (
         <div className=" flex-col  flex ">
-          <div className="flex flex-col pl-20px mt-10px bg-white box-shadow w-375px h-71px ">
+          <div className="flex flex-col pl-20px pr-20px mt-10px bg-white box-shadow w-375px h-71px ">
             <p
               className={`text-ellipsis white-space overflow-x-hidden fs-16px font-500  ${
                 readMessage ? "text-grey2" : " text-black-2 "
@@ -56,19 +56,18 @@ const Notification = () => {
             >
               Shopping budget has exceeds the Shopping budget has 
             </p>
-            <div className="flex">
+            <div className="flex mt-10px">
               <span
-                className={`text-ellipsis white-space overflow-x-hidden fs-12px  font-500 mt-10px  ${
-                  readMessage ? "text-grey2" : " text-black-2 "
-                } `}
+               className= "text-grey2 text-ellipsis white-space overflow-x-hidden fs-12px  font-500 mt-10px "
+                // className={`text-grey2 text-ellipsis white-space overflow-x-hidden fs-12px  font-500 mt-10px  ${
+                //   readMessage ? "" : " text-black-2 "
+                // } `}
               >
                 Your Shopping budget has exceeds the lim Your Shopping budget has exceeds the lim
            
               </span>
               <span
-                className={`ml-60px fs-12px  font-500  ${
-                  readMessage ? "text-grey2" : " text-black-2 "
-                } `}
+                className="ml-60px fs-12px  font-500 text-grey2"
               >
                 10:00
               </span>
