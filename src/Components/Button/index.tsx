@@ -1,7 +1,7 @@
 export type ButtonProps = {
   onClick?: () => void;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  variant?: "primary" | "secondry" | "text" | undefined;
+  variant?: 'primary' | 'secondary'| 'text' |undefined;
   children?: string;
   className?: string;
   type?: "button" | "submit" | "reset";
@@ -25,7 +25,7 @@ const Button = ({ onClick, variant, children, className, type }: ButtonProps) =>
     <button
       type={type}
       className={`${classBuilder(variant)} ${className}
-      p-8px w-343px h-56px border-none rounded-16px fs-18px font-600 pointer`}
+      p-8px w-343px h-56px border-none rounded-16px font-size-18px font-600 pointer`}
       onClick={onClick}
     >
       {children}
