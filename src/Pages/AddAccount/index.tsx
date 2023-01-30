@@ -67,10 +67,9 @@ const AddAccount = () => {
       </div>
       <div className="rounded-top-32px bg-white flex flex-col gap-40px ">
         <div className="flex flex-col gap-16px mt-24px ml-auto mr-auto ">
-          <Input placeholder="Name" type="text" disabled={false} value={name} />
+          <Input placeholder="Name" type="text" value={name} />
           <div>
             <DropDown
-              className={"text-light-grey"}
               options={["Bank", "Wallet"]}
               placeholder={"Account Type"}
               onChange={selectedValue}

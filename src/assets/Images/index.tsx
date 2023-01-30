@@ -8,5 +8,4 @@ import Jago from "./Jago.png";
 import Mandiri from "./Mandiri.png";
 import Paypal from "./Paypal.png";
 import Success from "./Success.png";
-
 export { Vector, Mail, Chase, Citi, BankOfAmerica, Bca, Jago, Mandiri, Paypal, Success };

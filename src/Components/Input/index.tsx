@@ -1,6 +1,6 @@
 import { Eye, EyeSlash } from "../../assets/Icons";
-import { useState } from "react";
-type Input = {
+import React, { useState } from "react";
+interface Input {
   type:
     | "button"
     | "checkbox"
@@ -32,8 +32,7 @@ type Input = {
   minlength?: number;
   className?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  disabled?: boolean;
-};
+}
 
 const Input = ({
   className,
@@ -44,8 +43,7 @@ const Input = ({
   pattern,
   maxlength,
   minlength,
-  onChange,
-  disabled
+  onChange
 }: Input) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -69,11 +67,7 @@ const Input = ({
           }}
         >
           <span className="absolute r-30px b-10px">
-            {showPassword ? (
-              <Eye className="w-30px h-30px" />
-            ) : (
-              <EyeSlash className="w-30px h-30px" />
-            )}
+            {showPassword ? <Eye className='w-30px h-30px' /> : <EyeSlash className='w-30px h-30px' />}
           </span>
         </i>
       ) : null}
