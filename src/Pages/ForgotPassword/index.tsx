@@ -5,7 +5,7 @@ import { Mail } from "../../assets/Images";
 import Button from "../../Components/Button";
 import Header from "../../Components/Header";
 import Input from "../../Components/Input";
-import { emailValidator } from "../../Utils/Validators";
+import { isEmailValid } from "../../Utils/Validators";
 
 const ForgotPassword = () => {
   const [showEmailSentScreen, setShowEmailSentScreen] = useState<boolean>(false);
@@ -39,7 +39,7 @@ const ForgotPassword = () => {
           style={{ flexGrow: 1 }}
           onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
             event.preventDefault();
-            emailValidator(email) && setShowEmailSentScreen(true);
+            isEmailValid(email) && setShowEmailSentScreen(true);
             email
               ? setErrorEmailMessage("Please enter a valid Email")
               : setErrorEmailMessage("Please enter a Email");
@@ -48,7 +48,7 @@ const ForgotPassword = () => {
           <div className="flex items-center w-343px h-64px">
             <Header
               title="Forgot Password"
-              leftIcon={<LeftArrow width={24} height={16} />}
+              leftIcon={<LeftArrow className="w-24px h-16px" />}
               className=""
             />
           </div>
