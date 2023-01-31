@@ -18,8 +18,8 @@ const BottomNavigation = () => {
     setChangeIcon((prev) => !prev);
   };
   return (
-    <div className="mt-200px flex">
-      <div className="flex justify-evenly pointer bg-primary w-187px border-top-right-radius-18px border-top-left-radius-10px">
+    <div className="mt-20px flex fixed w-full b-0">
+      <div className="flex justify-evenly pointer bottom-nav-bg w-187px border-top-right-radius-18px border-top-left-radius-10px">
         <div className="flex flex-col items-center justify-evenly">
           <Home fill="#C6C6C6" className="w-24px" />
           <span className="fs-10px text-shade-grey font-500">Home</span>
@@ -30,7 +30,7 @@ const BottomNavigation = () => {
         </div>
       </div>
 
-      <div className="border-bottom-40px border-top-radius-38px bg-primary border-top-right-radius-30px border-top-left-radius-30px">
+      <div className="border-bottom-40px border-top-radius-38px bottom-nav-bg border-top-right-radius-30px border-top-left-radius-30px">
         <button
           onClick={handleHomeButton}
           className="border-none pointer transform-17px  bg-primary border-w-5px 
@@ -63,7 +63,7 @@ const BottomNavigation = () => {
         </button>
       </div>
 
-      <div className="flex justify-evenly pointer  bg-primary w-187px border-top-right-radius-10px border-top-left-radius-18px ">
+      <div className="flex justify-evenly pointer  bottom-nav-bg w-187px border-top-right-radius-10px border-top-left-radius-18px ">
         <div className="flex flex-col items-center justify-evenly">
           <Transaction fill="#C6C6C6" className="w-24px " />
           <span className="fs-10px text-shade-grey font-500">Budget</span>

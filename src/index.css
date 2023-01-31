@@ -1098,8 +1098,8 @@ Bottom Navigation Component
   border-radius: 30px;
 }
 
-.py-15px-px-22px {
-  padding: 15px 22px;
+.py-10px-px-22px {
+  padding: 10px 22px;
 }
 
 .py-7px-px-15px {
@@ -1168,4 +1168,31 @@ Bottom Navigation Component
  }
  .l-20px{
   left:-20px;
+ }
+ .border-2px-white
+ {
+  border:solid 2px #fff;
+ }
+ .l-10px
+ {
+  left:10px;
+ }
+ .t-10px
+ {
+  top:10px;
+ }
+ .outline-1px-blue
+ {
+  outline: solid 2px #0077ff;
+ }
+ .bottom-nav-bg
+ {
+  background-color: #FCFCFC;
+ }
+ .w-22px{
+width:22px;
+ }
+ .r-10px
+ {
+  right:10px;
  }

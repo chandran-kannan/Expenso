@@ -2,7 +2,7 @@ import React from "react";
 
 function Card (props:any){
     return(
-        <div className={`flex items-center py-15px-px-22px rounded-28px ${props.styleName}`}>
+        <div className={`flex items-center py-10px-px-22px rounded-28px ${props.styleName}`}>
             <div className="bg-white p-5px rounded-10px">
             <img className="w-32px h-32px display-block mx-auto" src={props.image} alt="frame" />
                 </div>
