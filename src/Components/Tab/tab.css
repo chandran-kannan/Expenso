@@ -1,0 +1,17 @@
+.active-tabs {
+    background-color: #FCEED4;
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: #FCAC12;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.tabs {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: #91919F;
+    font-size: 16px;
+    line-height: 28px;
+}
