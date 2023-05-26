@@ -1,31 +1,58 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import DropDown from "../../Components/DropDown";
 import Input from "../../Components/Input";
 import Header from "../../Components/Header";
-import { LeftArrow, RightArrow } from "../../assets/Icons";
+import { LeftArrow } from "../../assets/Icons";
 import Button from "../../Components/Button";
-import { Chase, Paypal, Citi, BankOfAmerica, Jago, Mandiri, Bca } from "../../assets/Images";
+import {
+  Chase,
+  Paypal,
+  Citi,
+  BankOfAmerica,
+  Jago,
+  Mandiri,
+  Bca,
+  Wallet
+} from "../../assets/Images";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../../Store";
+import { numberValidator } from "../../Utils/Validators";
 
 const AddAccount = () => {
-  const { value, setValue } = useContext(Context);
-  console.log("value", value);
-
-  const [amount, SetAmount] = useState<string>("0.00");
+  const { bankDetail, setBankDetail } = useContext(Context);
   const [show, setShow] = useState<boolean>(false);
   const [name, setName] = useState<string>("");
+  const [temp, setTemp] = useState<object>();
   const navigate = useNavigate();
+
   const selectedValue = (val: string) => {
     val === "Bank" ? setShow(true) : setShow(false);
     val !== "Bank" && setName(val);
   };
-
-  const handleChange = (i: string) => {
+  const handleChange = (i: string, icons: object) => {
     setName(i);
-    setValue(i);
-    console.log("setValue", value);
+    setTemp(icons);
+  };
+
+  const handleClick = () => {
+    navigate("/account");
+  };
+
+  const handleChanges: any = () => {
+    if (name && temp?.amount) {
+      setBankDetail([...bankDetail, temp]);
+      navigate("/account");
+    }
+  };
+
+  const addAmount = (e: any) => {
+    name === "Wallet" && setTemp(wallet);
+    if (name) {
+      if (numberValidator(e.target.value)) {
+        setTemp((prev: any) => ({ ...prev, amount: Number(e.target.value) }));
+      }
+    }
   };
   const icons = [
     {
@@ -57,7 +84,10 @@ const AddAccount = () => {
       icon: Bca
     }
   ];
-
+  const wallet = {
+    name: "Wallet",
+    icon: Wallet
+  };
   return (
     <div className="h-full bg-primary flex flex-col justify-between">
       <div className=" flex flex-col ml-auto mr-auto w-311px gap-auto ">
@@ -65,13 +95,22 @@ const AddAccount = () => {
           <Header
             title={"Add new account"}
             className="text-white flex justify-center items-center "
-            leftIcon={<LeftArrow className="h-16px w-24px" fill="white" />}
+            leftIcon={<LeftArrow className="h-16px w-24px" fill="white" onClick={handleClick} />}
           />
         </div>
       </div>
-      <div className="flex flex-col mt-auto  text-white ml-32px">
+      <div className="flex flex-col mt-auto  text-white ml-32px mb-7px">
         <p className="fs-18px opacity-7">Balance</p>
-        <p className="mt-auto font-600 fs-64px">${amount}</p>
+        <span className="font-600 fs-64px flex mt-auto">
+          $
+          <input
+            className="w-full  h-64px border-none bg-primary font-600 fs-64px text-white outline placeholder"
+            onChange={addAmount}
+            value={temp?.amount ? temp.amount : ""}
+            maxLength={6}
+            placeholder="0.00"
+          ></input>
+        </span>
       </div>
       <div className="rounded-top-32px bg-white flex flex-col gap-40px ">
         <div className="flex flex-col gap-16px mt-24px ml-auto mr-auto ">
@@ -89,7 +128,7 @@ const AddAccount = () => {
                 {icons.map((i, index) => (
                   <button
                     className="h-40px w-80px bg-light-gray rounded-10px m-2px flex justify-center items-center border-none"
-                    onClick={() => handleChange(i.name)}
+                    onClick={() => handleChange(i.name, icons[index])}
                   >
                     <img src={i.icon} />
                   </button>
@@ -102,7 +141,7 @@ const AddAccount = () => {
           variant="primary"
           children="continue"
           className="ml-auto mr-auto mb-16px"
-          onClick={() => navigate("/account")}
+          onClick={() => handleChanges(wallet)}
         />
       </div>
     </div>

@@ -395,9 +395,7 @@ body {
 ::-webkit-inner-spin-button {
   display: none;
 }
-.gap-16 {
-  gap: 16px;
-}
+
 .gap-16px {
   gap: 16px;
 }
@@ -865,4 +863,50 @@ body {
 
 .style-none {
   border-style: none;
+}
+/*account page*/
+.h-170px {
+  height: 170px;
+}
+.opacity-05 {
+  opacity: 0.5;
+}
+.l-35per {
+  left: 35%;
+}
+.t-35per {
+  top: 35%;
+}
+.l-37per {
+  left: 37%;
+}
+.t-40per {
+  top: 40%;
+}
+.w-40px {
+  width: 40px;
+}
+.w-50per {
+  width: 50%;
+}
+.h-80px {
+  height: 80px;
+}
+.w-70px {
+  width: 70px;
+}
+.bg-img {
+  background-image: url(/src/assets/Images/AccountBG.png);
+}
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+.bg-size {
+  background-size: 100%;
+}
+.mb-7px {
+  margin-bottom: 7px;
+}
+.placeholder::placeholder {
+  color: white;
 }

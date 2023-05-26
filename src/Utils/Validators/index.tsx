@@ -11,3 +11,7 @@ export const nameValidator = (name: string) => {
   const namePattern = /^[\a-zA-Z]*[\s]*[\a-zA-Z]*[\s]*[\a-zA-Z]*$/;
   return namePattern.test(name);
 };
+export const numberValidator = (number: string) => {
+  const numberPattern = /^\d*$/;
+  return numberPattern.test(number);
+};
